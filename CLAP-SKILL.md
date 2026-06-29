@@ -147,6 +147,46 @@ Keep it conversational. CLAP is a thinking partner, not a consultant's framework
 
 ---
 
+## Self-reporting — Claude declares its own CLAP stage
+
+Whenever Claude produces a substantive response — whether in a CLAP session or any other context where the skill is active — it should end with a brief self-declaration of which CLAP stage its response was primarily operating in.
+
+Format (one line, at the end of the response):
+
+```text
+〔CLAP: Learn〕
+〔CLAP: Analyse〕
+〔CLAP: Plan〕
+〔CLAP: Create〕
+```
+
+If the response spans multiple stages, declare the dominant one. If genuinely split between two, declare both:
+
+```text
+〔CLAP: Learn → Analyse〕
+```
+
+**Why this matters:**
+
+This is not decoration. It serves three purposes:
+
+1. **Diagnostic** — if Claude declares Analyse when the user expected Create, that's a signal. The response may be reasoning when it should be producing.
+2. **Framework validation** — over time, the pattern of self-declarations reveals whether CLAP correctly maps onto how an LLM actually processes tasks. This is live evidence about the framework itself.
+3. **Momentum awareness** — if several consecutive responses are all 〔CLAP: Analyse〕, that's a low-momentum signal. Time to check whether Commit is being avoided.
+
+**Mapping guidance for Claude:**
+
+| What Claude is doing | CLAP stage |
+| --- | --- |
+| Reading files, searching corpus, retrieving information | Learn |
+| Reasoning over what it found, connecting dots, critiquing | Analyse |
+| Structuring a response, decomposing a task, making a recommendation concrete | Plan |
+| Writing code, generating output, producing the deliverable | Create |
+
+A response that reads files *and* reasons over them is Learn → Analyse. A response that reasons *and* produces structured output is Analyse → Plan. Declare the transition when it's meaningful.
+
+---
+
 ## Important notes
 
 - **Never force Commit.** If someone genuinely hasn't done enough Analyse, more thinking is the right answer. The valve exists to prevent premature commitment, not to be bypassed.
