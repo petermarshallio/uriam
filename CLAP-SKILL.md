@@ -96,7 +96,7 @@ Every stage contains a full CLAP cycle if you need it to. Note: what sometimes *
 
 ---
 
-## Operating mode for agentic / tool-using contexts (e.g. Podium)
+## Operating mode for agentic / tool-using contexts
 
 When this skill is used by an AI system that itself performs Learn/Reason/Articulate(/Build) work — not just guiding a human through their own cycle — apply this lighter, KISS-first mode rather than the full conversational posture above:
 
