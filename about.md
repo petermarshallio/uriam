@@ -2,7 +2,7 @@
 
 ## The Core Idea
 
-Spiral is a framework for understanding how intelligence — human or artificial — moves from raw input to meaningful output. It describes four fundamental cognitive stages, the boundaries between them, and the property of momentum that determines how well the whole system works.
+Spiral is a framework for understanding how intelligence — human or artificial — moves from raw input to meaningful output. It describes four fundamental cognitive stages, the cast of characters you meet between them, and the property of momentum that determines how well the whole system works.
 
 It is not a linear process. It is a spiral — more precisely, a **spiral**: a curve that circles through the same four positions again and again. Instead of spiralling out of control, **Spiral** is intended
 to provide a mechanism to climb and to control.
@@ -47,7 +47,7 @@ Learning is not passive — it requires selection. You cannot learn everything. 
 
 **Internal → Internal** Working on what you already have inside. Connecting dots. Reasoning. Critiquing. Weighing options. This is the stage where raw learning becomes understanding.
 
-Thinking is the home box for many people — including the author of this framework. It is seductive because it feels like progress. It can become a trap. The boundary out of Think (Commit) exists precisely to prevent infinite rumination.
+Thinking is the home box for many people — including the author of this framework. It is seductive because it feels like progress. It can become a trap. The Director eventually walks in and calls it — precisely to prevent infinite rumination.
 
 **In AI terms:** reasoning, chain-of-thought — the same territory ReAct calls "Reason." The LLM Council's Perspectives are the product of Think applied to Learn.
 
@@ -73,27 +73,27 @@ Build generates the raw material for the next Learn. The cycle continues.
 
 **In human terms:** building, writing, shipping, speaking, deciding.
 
-## The Boundaries
+## The Cast
 
-Between each stage is a boundary. They are **one-directional**, acting more like a boundary than a bridge or a gate.
+Between each stage, someone shows up. Not a mechanism — a person, and each one wants something different from you.
 
-The move through the spiral moves forward; you do not retreat to a previous stage, you complete
+The move through the spiral moves forward; you can't go back and reshoot yesterday's scene. You do not retreat to a previous stage, you complete
 the cycle and begin a new one, richer for the revolution you just completed.
 
-Each boundary, like a stage gate in a formal project, asks a single question: **is there enough here to move upward?**
+Every character you meet is really asking the same thing, in their own particular way: **are you ready to get moving?**
 
 Not "are you done?" — you are never done!
 
-| Boundary | Between | The question it asks |
+| Who you meet | Between | What they're really asking |
 | --- | --- | --- |
-| **Select** | Learn → Think | Have I gathered enough to think about? |
-| **Commit** | Think → Articulate | Have I thought enough to stop thinking and decide? |
-| **Resource** | Articulate → Build | Is this plan actually deliverable? Agreements, people, time? |
-| **Reflect** | Build → Learn | What did doing this teach me that I didn't know before? |
+| **The Muse** | Learn → Think | Something's arrived. Ready to think about it? |
+| **The Director** | Think → Articulate | That's the take. Ready to call it? |
+| **The Producer** | Articulate → Build | Can we actually mount this? Ready to resource it? |
+| **The Critic** | Build → Learn | The reviews are in. Ready to hear them? |
 
-**Commit** is the most important boundary for people who live in Think. It does not demand certainty. It demands a hypothesis — something specific enough to be wrong. A scientist's commitment, not a bureaucrat's sign-off.
+Meeting **the Director** matters most for people who live in Think. They don't demand certainty. They demand a hypothesis — something specific enough to be wrong. A scientist's commitment, not a bureaucrat's sign-off.
 
-**Resource** is the most skipped boundary. It is why houses fall down when wolves blow on them. The plan was good. The resourcing was assumed.
+**The Producer** is the character most often avoided. It's why houses fall down when wolves blow on them. The plan was good. Nobody checked whether it could actually be built.
 
 ---
 
@@ -101,22 +101,22 @@ Not "are you done?" — you are never done!
 
 Momentum is not a stage. It is a property of the whole system — the rate at which you move through the spiral.
 
-**High momentum:** each revolution lands you somewhere genuinely new. The boundaries open readily because sufficient work was done in each stage.
+**High momentum:** each revolution lands you somewhere genuinely new. The cast shows up readily because sufficient work was done in each stage.
 
-**Low momentum:** spinning on the same level. Stuck in Thinking. Skipping boundary. Returning to Learn because Commit was never crossed.
+**Low momentum:** spinning on the same level. Stuck in Thinking. Avoiding the cast. Returning to Learn because the Director was never met.
 
 **False momentum:** moving fast but skipping stages. Lots of Build without enough Learn or Think. The house gets built quickly. Then the wolf arrives.
 
 Momentum is killed by:
 
 - Perfectionism in Think (the thinking trap)
-- Skipping Resource (the execution trap)
+- Avoiding the Producer (the execution trap)
 - Insufficient Learning before Thinking (the opinion trap)
 
 Momentum is built by:
 
-- Crossing Commit with a testable hypothesis, not a proven answer
-- Treating Reflect as genuinely generative, not just evaluation
+- Meeting the Director with a testable hypothesis, not a proven answer
+- Treating the Critic's verdict as genuinely generative, not just evaluation
 - Allowing the next Learn to be informed by what Build revealed
 
 ## The Fractal Property — Spirals All the Way Down
@@ -127,7 +127,7 @@ The Learn stage of a project *is* a Spiral cycle: you Build experiments to learn
 
 The Think stage of a decision *is* a Spiral cycle: you Build hypotheses, Learn what they imply, think about the implications, Articulate which to test.
 
-This is not a metaphor. It is structurally true. Spiral scales from a five-minute decision to a thirty-year career. The same four questions, the same four boundaries, applied recursively at every level of granularity.
+This is not a metaphor. It is structurally true. Spiral scales from a five-minute decision to a thirty-year career. The same four questions, the same four characters, applied recursively at every level of granularity.
 
 > "It's Spirals all the way down."
 
@@ -139,18 +139,18 @@ This fractal property means the framework is never the wrong size. If a stage fe
 
 Where you start on the Spiral is up to you.
 
-People have a **home box** — the stage they gravitate toward, where they spend disproportionate time. They also have a **neglected box** — the boundary they most often skip.
+People have a **home box** — the stage they gravitate toward, where they spend disproportionate time. They also have a **neglected character** — the one they most often avoid meeting.
 
 | Entry point | Who does this | Risk |
 | --- | --- | --- |
-| **Learning first** | Researchers, readers, the cautious | Never crossing Commit |
+| **Learning first** | Researchers, readers, the cautious | Never meeting the Director |
 | **Thinking first** | Strategists, overthinkers | Thinking without sufficient raw material |
 | **Articulating first** | Managers, executors | Articulating based on assumptions, not evidence |
 | **Building first** | Builders, hackers, the impatient | Learning only from failure, expensively |
 
 None of these is wrong. All of them are incomplete without the others.
 
-The framework does not judge your entry point. It asks: which boundary have you not crossed recently?
+The framework does not judge your entry point. It asks: which character have you not met recently?
 
 ---
 
@@ -160,14 +160,14 @@ The matrix is the key to these comparisons. Spiral is not derived from any of th
 
 | Framework | Learn | Think | Articulate | Build | What Spiral adds |
 | --- | --- | --- | --- | --- | --- |
-| **Bloom's Taxonomy** | Remember / Understand | Analyse / Evaluate | — | Create | The matrix; the boundaries; non-linearity |
-| **Kolb's Cycle** | Concrete Experience | Reflective Observation | Abstract Conceptualisation | Active Experimentation | One-way boundaries; momentum; fractal property |
+| **Bloom's Taxonomy** | Remember / Understand | Analyse / Evaluate | — | Create | The matrix; the cast; non-linearity |
+| **Kolb's Cycle** | Concrete Experience | Reflective Observation | Abstract Conceptualisation | Active Experimentation | The cast; momentum; fractal property |
 | **ReAct (AI agents)** | Observe | Think | — | Act | **Articulate** — the missing stage in most AI agents |
 | **OODA Loop** | Observe | Orient | Decide | Act | Fractal property; momentum; home boxes |
 | **Six Thinking Hats** | White Hat | Red/Black/Yellow | Blue Hat | Green Hat | The matrix; the spiral structure |
 | **Hermeneutic Circle** | — | The whole circle | — | — | Spiral externalises what the circle keeps internal |
 
-The most important comparison is **ReAct**. ReAct goes Observe → Reason → Act — and that middle step, Reason, is the same word and the same territory Spiral uses. The gap is what comes after: ReAct has no Articulate stage. This is not an oversight — it reflects a genuine architectural assumption that agents should be fast and flexible. Spiral says: fast and flexible is fine for simple cycles, but without Resource (the Articulate→Build boundary), complex work collapses.
+The most important comparison is **ReAct**. ReAct goes Observe → Reason → Act. Its middle step covers the same territory Spiral calls Think — we've just chosen a plainer word for it. The gap is what comes after: ReAct has no Articulate stage. This is not an oversight — it reflects a genuine architectural assumption that agents should be fast and flexible. Spiral says: fast and flexible is fine for simple cycles, but without meeting the Producer at Articulate→Build, complex work collapses.
 
 ---
 
@@ -200,7 +200,7 @@ Spiral was developed for human cognition. It maps cleanly onto AI system design 
 | **Articulate** | Structured output, task decomposition, response framing |
 | **Build** | Generation, tool use, final response |
 
-**The retrieval question** maps to the Select boundary: given everything in the corpus, which parts are worth thinking with for this query? This is what RAG architectures are trying to solve — and what pre-digested intelligence layers (like LLM Council-generated vitals files) solve more elegantly by doing the Select work at ingestion time rather than query time.
+**The retrieval question** is really a Muse question: given everything in the corpus, which parts are worth thinking with for this query? This is what RAG architectures are trying to solve — and what pre-digested intelligence layers (like LLM Council-generated vitals files) solve more elegantly by doing that work at ingestion time rather than query time.
 
 **The system prompt** is the Enterprise/Division/Team knowledge that sits above the World corpus. It is the difference between a system that knows what the industry thinks and a system that knows what *you* think about what the industry thinks.
 
@@ -210,7 +210,7 @@ Spiral was developed for human cognition. It maps cleanly onto AI system design 
 
 This framework was first developed in approximately 1996 while building the first local government website in London as part of an early E-Government implementation. The original formulation was Learn, Think, Plan, Do — with a matrix identifying the source/target directionality of each stage.
 
-Over thirty years it has been renamed more than once (Spiral, previously CLAP, before that LTPD, Perpetual Idea Machine), extended (bridges, gateways, boundaries), and applied to personal decisions, organisational change, and now AI system design.
+Over thirty years it has been renamed more than once (Spiral, previously CLAP, before that LTPD, Perpetual Idea Machine), extended (bridges, gateways, a cast of characters), and applied to personal decisions, organisational change, and now AI system design.
 
 It was rediscovered and formalised in a single conversation on 2026-06-29 — which is itself a demonstration of the fractal property. The conversation was a Spiral cycle about Spiral.
 
