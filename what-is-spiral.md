@@ -22,13 +22,13 @@ The two axes are **source** (where does the input come from?) and **target** (wh
 | | **Internal target** | **External target** |
 | --- | --- | --- |
 | **External source** | **Learn** | **Build** |
-| **Internal source** | **Reason** | **Articulate** |
+| **Internal source** | **Think** | **Articulate** |
 
 This matrix is the lens. If you understand it, you can interpret the framework in your own words — and you can map almost any cognitive framework, AI architecture, or decision-making model onto it.
 
 - **Learn** — the world comes *in*. You absorb, accumulate, receive.
-- **Reason** — you work on what's *inside*. You reason, connect, critique.
-- **Articulate** — your internal reasoning goes *out* as structured intention. You make it concrete.
+- **Think** — you work on what's *inside*. You think, connect, critique.
+- **Articulate** — your internal thinking goes *out* as structured intention. You make it concrete.
 - **Build** — you act on the world, and the world responds. Something new exists.
 
 ## The Four Quadrants
@@ -43,23 +43,23 @@ Learning is not passive — it requires selection. You cannot learn everything. 
 
 **In human terms:** research, reading, listening, observation, experience.
 
-### Reason
+### Think
 
 **Internal → Internal** Working on what you already have inside. Connecting dots. Reasoning. Critiquing. Weighing options. This is the stage where raw learning becomes understanding.
 
-Reason is the home box for many people — including the author of this framework. It is seductive because it feels like progress. It can become a trap. The boundary out of Reason (Commit) exists precisely to prevent infinite rumination.
+Thinking is the home box for many people — including the author of this framework. It is seductive because it feels like progress. It can become a trap. The boundary out of Think (Commit) exists precisely to prevent infinite rumination.
 
-**In AI terms:** reasoning, chain-of-thought — the same territory ReAct calls "Reason." The LLM Council's Perspectives are the product of Reason applied to Learn.
+**In AI terms:** reasoning, chain-of-thought — the same territory ReAct calls "Reason." The LLM Council's Perspectives are the product of Think applied to Learn.
 
 **In human terms:** critical thinking, de Bono's Six Thinking Hats, the hermeneutic circle, dot-connecting.
 
 ### Articulate
 
-**Internal → External** Structured intention made concrete. This is the stage that most AI agents skip — and why they fail at anything requiring sustained, coordinated effort. Articulate is where internal reasoning becomes external artefact: a SMART objective, a work package, a Gantt chart, a prioritised backlog.
+**Internal → External** Structured intention made concrete. This is the stage that most AI agents skip — and why they fail at anything requiring sustained, coordinated effort. Articulate is where internal thinking becomes external artefact: a SMART objective, a work package, a Gantt chart, a prioritised backlog.
 
 Articulate is not thinking about what to do. It is writing it down in a form that others — or your future self — can act on.
 
-**In AI terms:** task decomposition, agent planning, structured output. The step between Reason and Act that ReAct agents lack.
+**In AI terms:** task decomposition, agent planning, structured output. The step between Think and Act that ReAct agents lack.
 
 **In human terms:** project management, SMART goals, sprint planning, architectural design documents.
 
@@ -86,12 +86,12 @@ Not "are you done?" — you are never done!
 
 | Boundary | Between | The question it asks |
 | --- | --- | --- |
-| **Select** | Learn → Reason | Have I gathered enough to reason with? |
-| **Commit** | Reason → Articulate | Have I thought enough to stop thinking and decide? |
+| **Select** | Learn → Think | Have I gathered enough to think about? |
+| **Commit** | Think → Articulate | Have I thought enough to stop thinking and decide? |
 | **Resource** | Articulate → Build | Is this plan actually deliverable? Agreements, people, time? |
 | **Reflect** | Build → Learn | What did doing this teach me that I didn't know before? |
 
-**Commit** is the most important boundary for people who live in Reason. It does not demand certainty. It demands a hypothesis — something specific enough to be wrong. A scientist's commitment, not a bureaucrat's sign-off.
+**Commit** is the most important boundary for people who live in Think. It does not demand certainty. It demands a hypothesis — something specific enough to be wrong. A scientist's commitment, not a bureaucrat's sign-off.
 
 **Resource** is the most skipped boundary. It is why houses fall down when wolves blow on them. The plan was good. The resourcing was assumed.
 
@@ -103,15 +103,15 @@ Momentum is not a stage. It is a property of the whole system — the rate at wh
 
 **High momentum:** each revolution lands you somewhere genuinely new. The boundaries open readily because sufficient work was done in each stage.
 
-**Low momentum:** spinning on the same level. Stuck in Reason. Skipping boundary. Returning to Learn because Commit was never crossed.
+**Low momentum:** spinning on the same level. Stuck in Thinking. Skipping boundary. Returning to Learn because Commit was never crossed.
 
-**False momentum:** moving fast but skipping stages. Lots of Build without enough Learn or Reason. The house gets built quickly. Then the wolf arrives.
+**False momentum:** moving fast but skipping stages. Lots of Build without enough Learn or Think. The house gets built quickly. Then the wolf arrives.
 
 Momentum is killed by:
 
-- Perfectionism in Reason (the thinking trap)
+- Perfectionism in Think (the thinking trap)
 - Skipping Resource (the execution trap)
-- Insufficient Learn before Reason (the opinion trap)
+- Insufficient Learning before Thinking (the opinion trap)
 
 Momentum is built by:
 
@@ -123,9 +123,9 @@ Momentum is built by:
 
 Each stage of Spiral is itself a full Spiral cycle.
 
-The Learn stage of a project *is* a Spiral cycle: you Build experiments to learn from, Learn from them, Reason about what you found, Articulate the next experiment.
+The Learn stage of a project *is* a Spiral cycle: you Build experiments to learn from, Learn from them, Think about what you found, Articulate the next experiment.
 
-The Reason stage of a decision *is* a Spiral cycle: you Build hypotheses, Learn what they imply, Reason about the implications, Articulate which to test.
+The Think stage of a decision *is* a Spiral cycle: you Build hypotheses, Learn what they imply, think about the implications, Articulate which to test.
 
 This is not a metaphor. It is structurally true. Spiral scales from a five-minute decision to a thirty-year career. The same four questions, the same four boundaries, applied recursively at every level of granularity.
 
@@ -143,10 +143,10 @@ People have a **home box** — the stage they gravitate toward, where they spend
 
 | Entry point | Who does this | Risk |
 | --- | --- | --- |
-| **Learn first** | Researchers, readers, the cautious | Never crossing Commit |
-| **Reason first** | Strategists, overthinkers | Reasoning without sufficient raw material |
-| **Articulate first** | Managers, executors | Articulating based on assumptions, not evidence |
-| **Build first** | Builders, hackers, the impatient | Learning only from failure, expensively |
+| **Learning first** | Researchers, readers, the cautious | Never crossing Commit |
+| **Thinking first** | Strategists, overthinkers | Thinking without sufficient raw material |
+| **Articulating first** | Managers, executors | Articulating based on assumptions, not evidence |
+| **Building first** | Builders, hackers, the impatient | Learning only from failure, expensively |
 
 None of these is wrong. All of them are incomplete without the others.
 
@@ -158,11 +158,11 @@ The framework does not judge your entry point. It asks: which boundary have you 
 
 The matrix is the key to these comparisons. Spiral is not derived from any of these — it predates most of them in the author's practice — but the overlaps are illuminating.
 
-| Framework | Learn | Reason | Articulate | Build | What Spiral adds |
+| Framework | Learn | Think | Articulate | Build | What Spiral adds |
 | --- | --- | --- | --- | --- | --- |
 | **Bloom's Taxonomy** | Remember / Understand | Analyse / Evaluate | — | Create | The matrix; the boundaries; non-linearity |
 | **Kolb's Cycle** | Concrete Experience | Reflective Observation | Abstract Conceptualisation | Active Experimentation | One-way boundaries; momentum; fractal property |
-| **ReAct (AI agents)** | Observe | Reason | — | Act | **Articulate** — the missing stage in most AI agents |
+| **ReAct (AI agents)** | Observe | Think | — | Act | **Articulate** — the missing stage in most AI agents |
 | **OODA Loop** | Observe | Orient | Decide | Act | Fractal property; momentum; home boxes |
 | **Six Thinking Hats** | White Hat | Red/Black/Yellow | Blue Hat | Green Hat | The matrix; the spiral structure |
 | **Hermeneutic Circle** | — | The whole circle | — | — | Spiral externalises what the circle keeps internal |
@@ -183,7 +183,7 @@ Each stage operates across multiple **reach levels** — the scope of knowledge 
 | **Team** | Immediate colleagues | Slack conversations, shared decisions |
 | **Self** | Personal knowledge and experience | Your own expertise, intuition, history |
 
-The richest Reason happens when multiple reach levels are in play simultaneously. A decision informed only by World knowledge (what the industry thinks) without Self knowledge (what you specifically know) is incomplete. A decision informed only by Self knowledge without World knowledge is parochial.
+The richest thinking happens when multiple reach levels are in play simultaneously. A decision informed only by World knowledge (what the industry thinks) without Self knowledge (what you specifically know) is incomplete. A decision informed only by Self knowledge without World knowledge is parochial.
 
 **For AI systems:** this reach hierarchy maps directly to the system prompt (Enterprise/Division/Team knowledge) + corpus (World knowledge) + user input (Self knowledge). The most valuable outputs emerge from the collision of all three.
 
@@ -196,11 +196,11 @@ Spiral was developed for human cognition. It maps cleanly onto AI system design 
 | Spiral stage | What an AI system does |
 | --- | --- |
 | **Learn** | Corpus ingestion, retrieval, contextual grounding |
-| **Reason** | Reasoning, chain-of-thought, multi-perspective critique |
+| **Think** | Reasoning, chain-of-thought, multi-perspective critique |
 | **Articulate** | Structured output, task decomposition, response framing |
 | **Build** | Generation, tool use, final response |
 
-**The retrieval question** maps to the Select boundary: given everything in the corpus, which parts are worth reasoning with for this query? This is what RAG architectures are trying to solve — and what pre-digested intelligence layers (like LLM Council-generated vitals files) solve more elegantly by doing the Select work at ingestion time rather than query time.
+**The retrieval question** maps to the Select boundary: given everything in the corpus, which parts are worth thinking with for this query? This is what RAG architectures are trying to solve — and what pre-digested intelligence layers (like LLM Council-generated vitals files) solve more elegantly by doing the Select work at ingestion time rather than query time.
 
 **The system prompt** is the Enterprise/Division/Team knowledge that sits above the World corpus. It is the difference between a system that knows what the industry thinks and a system that knows what *you* think about what the industry thinks.
 
@@ -214,6 +214,6 @@ Over thirty years it has been renamed more than once (Spiral, previously CLAP, b
 
 It was rediscovered and formalised in a single conversation on 2026-06-29 — which is itself a demonstration of the fractal property. The conversation was a Spiral cycle about Spiral.
 
-It was renamed a second time on 2026-07-02, from CLAP to Spiral, once the stage names it had grown into — Learn, Reason, Articulate, Build — no longer spelled the old acronym. Spiral turned out to be the more precise word regardless: not a flat spiral that grows outward, but a climbing one that keeps its shape and simply gains height.
+It was renamed a second time on 2026-07-02, from CLAP to Spiral, once the stage names it had grown into — Learn, Think, Articulate, Build — no longer spelled the old acronym. Spiral turned out to be the more precise word regardless: not a flat spiral that grows outward, but a climbing one that keeps its shape and simply gains height.
 
 The framework has survived thirty years not because it was written down carefully, but because it was *true enough to keep being useful.* This document is the first attempt to write it down carefully.
