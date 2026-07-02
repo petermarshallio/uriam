@@ -4,16 +4,12 @@
 
 Any two minds that speak it — human or AI — can work together.
 
----
-
 ## What's in this repo
 
 | File | Purpose |
 | --- | --- |
 | [`about.md`](./about.md) | The full canonical framework |
 | [`spiral-skill.md`](./spiral-skill.md) | The skill — paste this into Claude |
-
----
 
 ## Installation
 
@@ -23,8 +19,6 @@ Any two minds that speak it — human or AI — can work together.
 4. Paste the contents of [`spiral-skill.md`](./spiral-skill.md)
 
 That's it. No configuration. No restart.
-
----
 
 ## Try it now
 
@@ -36,13 +30,9 @@ Claude will identify which Spiral stage you're in, which character you're about 
 
 Or just say **"Spiral with me"** followed by any decision you're stuck on.
 
----
-
 ## Learn more
 
 The full framework — the matrix, the cast, the fractal property, and how Spiral maps onto AI system design — is in [`about.md`](./about.md).
-
----
 
 ## License
 

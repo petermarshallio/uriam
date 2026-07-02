@@ -95,8 +95,6 @@ Meeting **the Director** matters most for people who live in Think. They don't d
 
 **The Producer** is the character most often avoided. It's why houses fall down when wolves blow on them. The plan was good. Nobody checked whether it could actually be built.
 
----
-
 ## Momentum
 
 Momentum is not a stage. It is a property of the whole system — the rate at which you move through the spiral.
@@ -133,8 +131,6 @@ This is not a metaphor. It is structurally true. Spiral scales from a five-minut
 
 This fractal property means the framework is never the wrong size. If a stage feels too large to act on, run Spiral inside it. The cycle will break it into manageable revolutions.
 
----
-
 ## Non-Linearity and Entry Points
 
 Where you start on the Spiral is up to you.
@@ -152,8 +148,6 @@ None of these is wrong. All of them are incomplete without the others.
 
 The framework does not judge your entry point. It asks: which character have you not met recently?
 
----
-
 ## Relation to Other Frameworks
 
 The matrix is the key to these comparisons. Spiral is not derived from any of these — it predates most of them in the author's practice — but the overlaps are illuminating.
@@ -168,8 +162,6 @@ The matrix is the key to these comparisons. Spiral is not derived from any of th
 | **Hermeneutic Circle** | — | The whole circle | — | — | Spiral externalises what the circle keeps internal |
 
 The most important comparison is **ReAct**. ReAct goes Observe → Reason → Act. Its middle step covers the same territory Spiral calls Think — we've just chosen a plainer word for it. The gap is what comes after: ReAct has no Articulate stage. This is not an oversight — it reflects a genuine architectural assumption that agents should be fast and flexible. Spiral says: fast and flexible is fine for simple cycles, but without meeting the Producer at Articulate→Build, complex work collapses.
-
----
 
 ## Spiral and the Dimensions of Knowledge
 
@@ -187,8 +179,6 @@ The richest thinking happens when multiple reach levels are in play simultaneous
 
 **For AI systems:** this reach hierarchy maps directly to the system prompt (Enterprise/Division/Team knowledge) + corpus (World knowledge) + user input (Self knowledge). The most valuable outputs emerge from the collision of all three.
 
----
-
 ## Applying Spiral to AI System Design
 
 Spiral was developed for human cognition. It maps cleanly onto AI system design because good AI systems are trying to replicate good thinking.
@@ -203,8 +193,6 @@ Spiral was developed for human cognition. It maps cleanly onto AI system design 
 **The retrieval question** is really a Muse question: given everything in the corpus, which parts are worth thinking with for this query? This is what RAG architectures are trying to solve — and what pre-digested intelligence layers (like LLM Council-generated vitals files) solve more elegantly by doing that work at ingestion time rather than query time.
 
 **The system prompt** is the Enterprise/Division/Team knowledge that sits above the World corpus. It is the difference between a system that knows what the industry thinks and a system that knows what *you* think about what the industry thinks.
-
----
 
 ## A Note on Origin
 

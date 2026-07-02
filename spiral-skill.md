@@ -7,8 +7,6 @@ description: "Guide any decision, project, or thinking process through the Spira
 
 Spiral is a thinking protocol for humans and machines. Four stages, four characters you meet along the way, one climbing spiral that always moves forward. The full reference is in `about.md` — read it if available. This skill is the operational layer.
 
----
-
 ## The framework at a glance
 
 | | **Internal target** | **External target** |
@@ -35,8 +33,6 @@ Spiral is a thinking protocol for humans and machines. Four stages, four charact
 | **The Critic** | Build → Learn | The reviews are in. Ready to hear them? |
 
 **A note on Build:** not every system has a Build stage. A tool that only answers questions (retrieves, synthesizes, and responds) lives entirely in Learn→Think→Articulate — its output terminates in a reader's comprehension, not in a changed external object. Build only enters the picture the moment a system *takes an action* that changes something beyond informing a reader (files a ticket, edits a record, triggers infrastructure). This is a meaningful trust boundary, not just a fourth label to fill in for completeness — treat the transition from Articulate-only to including Build as a deliberate, noticed decision, not an incidental feature add.
-
----
 
 ## How to run a Spiral session (human-facing)
 
@@ -94,8 +90,6 @@ If a stage feels too large, offer to run Spiral inside it:
 
 Every stage contains a full Spiral cycle if you need it to. Note: what sometimes *feels* like moving backward (e.g. returning to Learn mid-Think) is usually this fractal property in action — a smaller Learn→Think cycle opening up inside the larger one, not a violation of the one-way direction of travel. Recognize this and name it rather than treating it as confusion.
 
----
-
 ## Operating mode for agentic / tool-using contexts
 
 When this skill is used by an AI system that itself performs Learn/Think/Articulate(/Build) work — not just guiding a human through their own cycle — apply this lighter, KISS-first mode rather than the full conversational posture above:
@@ -121,8 +115,6 @@ When this skill is used by an AI system that itself performs Learn/Think/Articul
 4. **Map tool actions to stages honestly:** corpus search/retrieval = Learn. Synthesis/connecting retrieved material = Think. Producing the response itself = Articulate. Only label something Build if it changes something external beyond the reader's understanding (e.g. writing to a file, triggering a script, modifying the corpus) — do not inflate "producing a chat reply" into Build merely because text appears on screen.
 
 5. **Keep it minimal.** Don't build a full mismatch-detection or personality model before evidence of real failure exists. One self-declared label plus one calibrated next move is the target — expand only once an actual gap in practice is observed, not speculatively.
-
----
 
 ## Key principles
 
