@@ -8,8 +8,10 @@ Any two minds that speak it — human or AI — can work together.
 
 | File | Purpose |
 | --- | --- |
-| [`about.md`](./about.md) | The full canonical framework — the single source of truth |
-| [`.claude/skills/spiral/`](./.claude/skills/spiral/) | The skill bundle — `SKILL.md` plus two momentum-logging scripts. It reads `about.md` directly when it's running inside this repo, and falls back to fetching it from GitHub otherwise, so there's nothing bundled to keep in sync |
+| [`about.md`](./about.md) | The narrative explanation — why the framework works |
+| [`reference.md`](./reference.md) | Strict definitions and lookup tables |
+| [`origin.md`](./origin.md) | The framework's history |
+| [`.claude/skills/spiral/`](./.claude/skills/spiral/) | The skill bundle — just `SKILL.md`. It reads the three files above directly when running inside this repo, and falls back to fetching them from GitHub otherwise, so there's nothing bundled to keep in sync |
 
 ## Installation
 

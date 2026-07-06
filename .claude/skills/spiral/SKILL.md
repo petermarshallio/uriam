@@ -3,11 +3,9 @@ name: spiral
 description: "Guides a person, or an AI system reflecting on its own process, through the Spiral thinking framework — Learn, Think, Articulate, Build. Identifies which stage someone is in, which cast member (the Muse, Director, Producer, or Critic) they're ready to meet, and whether the Stage Manager needs to step in and call the cue. Does not push people through stages faster than they're ready."
 when_to_use: "Invoke explicitly: 'Spiral with me', 'run Spiral', 'where am I in the Spiral'. Fits naturally when someone is stuck on a decision, describes going in circles, can't decide, doesn't know where to start, or has been overthinking something specific. Also invoke for an explicit multi-voice review of a specific exchange: 'convene the cast on that', 'run a Spiral review', 'what would the Muse/Director/Producer/Critic say about this'."
 argument-hint: "[what you're stuck on, or leave blank]"
-arguments: topic
 disable-model-invocation: true
 allowed-tools:
   - Read
-  - Bash
   - WebFetch
 ---
 
@@ -21,11 +19,9 @@ Spiral is a thinking protocol for humans and machines. Four stages, a cast membe
 
 If running inside the `spiral` repository, read these directly — they're the live, canonical copies, including any uncommitted edits.
 
-## If invoked with a topic
+## Opening
 
-$topic
-
-If that line isn't empty, it's what the person said they're stuck on — open by reflecting it back (step 1 below) instead of asking what's going on. If it's empty, ask first.
+If the person already said what they're stuck on when they invoked this skill, open by reflecting that back (step 1 below) instead of asking what's going on. Otherwise, ask first.
 
 ## The framework at a glance
 
@@ -78,7 +74,7 @@ Both halves rest on the same discipline: know the character, use the question, s
 
 Use Spiral vocabulary internally to orient yourself. Use plain language with the person.
 
-**This holds for the whole conversation, not just the first mention.** It's easy to translate a stage name into plain language the first time, then lapse back into the raw term two messages later when referring back to the same observation ("since you're building toward X, you know the Build intent here"). Before sending, check every sentence that touches this skill's vocabulary — stage names, cast names, and internal shorthand like "Build intent" or "Producer's cue" — as if you'd never seen this file: would a reader who hasn't read it recognize a word as jargon? If yes, rewrite it, no matter how far into the conversation you are.
+This holds for the whole conversation, not just the first mention — see "No jargon leaks" under Key Principles below.
 
 ### 1 — Reflect back, then check in
 
@@ -183,21 +179,6 @@ In this conversational skill, that expense is only paid on explicit request (e.g
 3. **Each convened character critiques in turn, explicitly naming the exact method they picked from the table** — not a paraphrase of the character's general vibe. "Using a pre-mortem: ..." or "Via Socratic questioning: ..." at the start of that character's paragraph, then the critique. This is the one deliberate exception to the no-jargon-leaks rule elsewhere in this skill: mode (c) is an explicit analytical artifact the user asked for, not organic conversation, so naming the technique is appropriate here — the same way a code review naming "the DRY principle" is fine because that's exactly the register the user invoked. If two convened characters converge on the same point, the panel isn't adding value — they should be surfacing what the other wouldn't.
 
 4. **Stage Manager closes.** 3-4 sentences synthesizing the convened voices into one judgment call and a concrete recommendation — a decision about what should change (if anything), not a summary of what was said.
-
----
-
-## Tracking momentum across sessions (optional)
-
-Momentum is usually a single-session judgement call. It doesn't have to be — this skill bundles two scripts for a lightweight, cross-session log:
-
-- `scripts/log-stage.sh "<Stage>" "<one-line note>"` — appends an entry (date, stage, note) to `~/.spiral/log.md` (override the location with the `SPIRAL_LOG_DIR` environment variable).
-- `scripts/view-log.sh [n]` — prints the last `n` entries (default 10).
-
-Use these when continuity actually matters, not on every exchange. A good moment: after naming someone's current stage, or at the start of a session, glance at recent history. If the same stage or the same neglected character keeps recurring, say so plainly:
-
-> *"Last three times we talked, you were avoiding the Director — is that still true?"*
-
-Silence is fine when there's nothing worth surfacing.
 
 ---
 
