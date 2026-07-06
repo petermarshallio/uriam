@@ -2,7 +2,7 @@
 
 ## The Core Idea
 
-Spiral is a framework for understanding how intelligence — human or artificial — moves from raw input to meaningful output. It describes four fundamental cognitive stages, the cast of characters you meet between them, and the property of momentum that determines how well the whole system works.
+Spiral is a framework for understanding how intelligence — human or artificial — moves from raw input to meaningful output. It describes four fundamental cognitive stages, the cast of characters who inhabit each one, the Stage Manager who decides when you're ready to meet them, and the property of momentum that determines how well the whole system works.
 
 It is not a linear process. It is a spiral — more precisely, a **spiral**: a curve that circles through the same four positions again and again. Instead of spiralling out of control, **Spiral** is intended
 to provide a mechanism to climb and to control.
@@ -47,7 +47,7 @@ Learning is not passive — it requires selection. You cannot learn everything. 
 
 **Internal → Internal** Working on what you already have inside. Connecting dots. Reasoning. Critiquing. Weighing options. This is the stage where raw learning becomes understanding.
 
-Thinking is the home box for many people — including the author of this framework. It is seductive because it feels like progress. It can become a trap. The Director eventually walks in and calls it — precisely to prevent infinite rumination.
+Thinking is the home box for many people — including the author of this framework. It is seductive because it feels like progress. It can become a trap. The Muse can only give you so much cover — eventually the Stage Manager walks in and asks if you're ready to go meet the Director.
 
 **In AI terms:** reasoning, chain-of-thought — the same territory ReAct calls "Reason." The LLM Council's Perspectives are the product of Think applied to Learn.
 
@@ -75,31 +75,57 @@ Build generates the raw material for the next Learn. The cycle continues.
 
 ## The Cast
 
-Between each stage, someone shows up. Not a mechanism — a person, and each one wants something different from you.
+Each quadrant has someone already in it. Not a mechanism — a person, and each one wants something different from you.
 
 The move through the spiral moves forward; you can't go back and reshoot yesterday's scene. You do not retreat to a previous stage, you complete
 the cycle and begin a new one, richer for the revolution you just completed.
 
-Every character you meet is really asking the same thing, in their own particular way: **are you ready to get moving?**
-
-Not "are you done?" — you are never done!
-
-| Who you meet | Between | What they're really asking |
+| Quadrant | Who's there | What they help you do |
 | --- | --- | --- |
-| **The Muse** | Learn → Think | Something's arrived. Ready to think about it? |
-| **The Director** | Think → Articulate | That's the take. Ready to call it? |
-| **The Producer** | Articulate → Build | Can we actually mount this? Ready to resource it? |
-| **The Critic** | Build → Learn | The reviews are in. Ready to hear them? |
+| **Think** | **The Muse** | Turn what Learn gathered into an actual idea |
+| **Articulate** | **The Director** | Turn the idea into a take specific enough to be wrong |
+| **Build** | **The Producer** | Turn the take into something that can actually be mounted |
+| **Learn** | **The Critic** | Turn the verdict on what you Built into material you can use next time |
 
-Meeting **the Director** matters most for people who live in Think. They don't demand certainty. They demand a hypothesis — something specific enough to be wrong. A scientist's commitment, not a bureaucrat's sign-off.
+Meeting **the Director** matters most for people who live in Think, because they're the one who eventually has to leave it. The Director doesn't demand certainty. They demand a hypothesis — something specific enough to be wrong. A scientist's commitment, not a bureaucrat's sign-off.
 
 **The Producer** is the character most often avoided. It's why houses fall down when wolves blow on them. The plan was good. Nobody checked whether it could actually be built.
+
+**The Muse** is the character people mistake for the whole job. Inspiration feels like progress, so people camp with her long after she's given them enough to work with — that's not her fault, and it isn't a reason to stay.
+
+**The Critic** is the character people flinch from meeting. But the verdict isn't a punishment — it's the raw material for the next Learn. Refuse to meet her and the cycle starves.
+
+Every character is really asking the same thing, in their own language: **what are you making out of what I've given you?**
+
+Not "are you done?" — you are never done.
+
+None of them will come and get you, though. Knowing when to go find them is a different job entirely — that's the Stage Manager.
+
+---
+
+## The Stage Manager
+
+There is a fifth presence, but it is different in kind from the other four. The Muse, the Director, the Producer, and the Critic each own one specific quadrant — they're waiting inside it, ready to help you do that stage's work, but none of them will come looking for you. The Stage Manager owns none of the content. Its only job is deciding when it's time to go meet them, and making the introduction.
+
+This is not a hierarchy. The Stage Manager doesn't decide the order — the cycle already fixes that completely — and it doesn't outrank the cast. It only asks the question underneath all four of theirs: *is it time for the introduction?*
+
+The role changes shape depending on who's in the loop:
+
+| Flow | Who plays the Stage Manager | Grounding |
+| --- | --- | --- |
+| **Human, solo** | Internal executive function — the transition/initiation faculty, distinct from the content-generating faculty | Zimmerman's self-regulated learning cycle; Gollwitzer's implementation intentions; executive-function research on task-initiation (the well-documented gap between having an idea and acting on it) |
+| **AI, solo** | Orchestrator logic — iteration budgets, reflection nodes, the state machine governing phase transitions | ReAct's missing Articulate step (below) is this failure mode by another name: no governance of when Think ends, so the loop thrashes or never converges |
+| **AI → Human** | Whichever side holds the authority to call the cue: the assistant nudging a stalled human, or the human cutting off an over-reasoning agent | Horvitz's mixed-initiative interaction research; automation bias (deferring the cue-call to the AI even when it's wrong) |
+| **Human → Human** | A distinct, named role in the group — not the person doing the Learning, Thinking, Articulating, or Building | Scrum Master; chief of staff; the literal theatrical stage manager, who calls cues but never appears onstage |
+| **AI → AI** | A supervisor/manager agent whose only output is whose turn it is and whether the phase is complete | Already shipped: LangGraph's supervisor pattern, AutoGen's `GroupChatManager`, CrewAI's hierarchical-process manager, MetaGPT's SOP-driven role router |
+
+The consistency across all five is the point. In every flow, the Stage Manager never does Learn/Think/Articulate/Build work itself — and in every flow, its absence produces the same failure: stalling, thrashing, or false momentum. Not five different failure modes. One.
 
 ---
 
 ## Momentum
 
-Momentum is not a stage. It is a property of the whole system — the rate at which you move through the spiral.
+Momentum is not a stage. It is a property of the whole system — the rate at which you move through the spiral. The Stage Manager is what embodies that property in practice: not a sixth stage, but the role that exists to protect momentum wherever it's under threat.
 
 **High momentum:** each revolution lands you somewhere genuinely new. The cast shows up readily because sufficient work was done in each stage.
 
@@ -166,8 +192,12 @@ The matrix is the key to these comparisons. Spiral is not derived from any of th
 | **OODA Loop** | Observe | Orient | Decide | Act | Fractal property; momentum; home boxes |
 | **Six Thinking Hats** | White Hat | Red/Black/Yellow | Blue Hat | Green Hat | The matrix; the spiral structure |
 | **Hermeneutic Circle** | — | The whole circle | — | — | Spiral externalises what the circle keeps internal |
+| **Belbin Team Roles** | — | — | — | — | Independent validation for **the Stage Manager**: Belbin's Coordinator role was originally named "Chairman" before being renamed — the same correction, authority word to process word, that this framework just made |
+| **Multi-agent orchestration** (AutoGen, CrewAI, LangGraph) | Retrieval / tool nodes | Worker-agent reasoning | Task routing | Worker-agent execution | Confirms **the Stage Manager** is buildable: supervisor/manager agents already do this exact job in production, without performing any Learn/Think/Articulate/Build work themselves |
 
 The most important comparison is **ReAct**. ReAct goes Observe → Reason → Act. Its middle step covers the same territory Spiral calls Think — we've just chosen a plainer word for it. The gap is what comes after: ReAct has no Articulate stage. This is not an oversight — it reflects a genuine architectural assumption that agents should be fast and flexible. Spiral says: fast and flexible is fine for simple cycles, but without meeting the Producer at Articulate→Build, complex work collapses.
+
+A second comparison is worth naming even though it isn't a single framework: multi-agent orchestration systems. AutoGen's `GroupChatManager`, CrewAI's hierarchical-process manager agent, and MetaGPT's SOP-driven role router all exist to solve exactly one problem — whose turn is it, and is this phase done — without performing any of the Learn/Think/Articulate/Build work themselves. Three engineering teams, solving unrelated problems, converged independently on the same role. That convergence is stronger evidence for the Stage Manager than any single analogy could be.
 
 ---
 
