@@ -1,5 +1,7 @@
 # Spiral — A Framework for Human and Machine Intelligence
 
+*This is the narrative explanation — what Spiral is and why it works. For strict definitions and lookup tables, see [`reference.md`](./reference.md). For the framework's history, see [`origin.md`](./origin.md).*
+
 ## The Core Idea
 
 Spiral is a framework for understanding how intelligence — human or artificial — moves from raw input to meaningful output. It describes four fundamental cognitive stages, the cast of characters who inhabit each one, the Stage Manager who decides when you're ready to meet them, and the property of momentum that determines how well the whole system works.
@@ -75,17 +77,10 @@ Build generates the raw material for the next Learn. The cycle continues.
 
 ## The Cast
 
-Each stage has someone already in it. Not a mechanism — a person, and each one wants something different from you.
+Each stage has someone already in it. Not a mechanism — a person, and each one wants something different from you. (The roster — which character owns which stage — is in reference.md; here's who they are.)
 
 The move through the spiral moves forward; you can't go back and reshoot yesterday's scene. You do not retreat to a previous stage, you complete
 the cycle and begin a new one, richer for the revolution you just completed.
-
-| Stage | Who's there | What they help you do |
-| --- | --- | --- |
-| **Think** | **The Muse** | Turn what Learn gathered into an actual idea |
-| **Articulate** | **The Director** | Turn the idea into a take specific enough to be wrong |
-| **Build** | **The Producer** | Turn the take into something that can actually be mounted |
-| **Learn** | **The Critic** | Turn the verdict on what you Built into material you can use next time |
 
 Meeting **the Director** matters most for people who live in Think, because they're the one who eventually has to leave it. The Director doesn't demand certainty. They demand a hypothesis — something specific enough to be wrong. A scientist's commitment, not a bureaucrat's sign-off.
 
@@ -101,74 +96,19 @@ Not "are you done?" — you are never done.
 
 None of them will come and get you, though. Knowing when to go find them is a different job entirely — that's the Stage Manager.
 
----
-
-## Techniques Each Character Draws On
-
-Each character's job description above is deliberately abstract — "turn the idea into a take specific enough to be wrong" has to mean something different for a personal decision than for a software spec. Rather than pick one universal technique per character (tried, and broke immediately on Spiral's own README example: "As a traveler, I want to visit Geneva" is not a real articulation technique), each character has a menu of established, named, well-documented methods to draw from — pick whichever one's actual domain matches the situation. The specific reference matters: it's what lets both the skill and the model agree on exactly what a name denotes, rather than a vague gesture at "be more rigorous."
-
-### The Critic (Learn)
-
-| Method | Specific reference | Fits because |
-| --- | --- | --- |
-| After-Action Review | US Army's 4-question format (expected/actual/why/next) | Converts an outcome's verdict into reusable knowledge |
-| Blameless Postmortem | Google SRE Book's postmortem culture | Extracts lessons from failure without assigning blame |
-| Kolb's Reflective Observation | Kolb's Experiential Learning Cycle, stage 2 specifically | Digests raw experience before forming any concept |
-| Double-Loop Learning | Argyris & Schön's governing-variables model | Questions whether the goal itself was right |
-| 5 Whys | Toyota Production System root-cause technique | Chases a symptom back to its actual cause |
-| Start/Stop/Continue | Standard Agile retrospective format | Recurring ritual turning outcomes into forward action |
-
-### The Muse (Think)
-
-| Method | Specific reference | Fits because |
-| --- | --- | --- |
-| Socratic Method | Platonic elenchus (self-questioning to test a claim) | Interrogates a claim already held, unexamined |
-| Dialectical Reasoning | Hegelian thesis-antithesis-synthesis triad | Reconciles opposing ideas already in mind |
-| First Principles Thinking | Cartesian/Aristotelian decomposition to fundamentals | Strips a concept down, rebuilds from scratch |
-| Six Thinking Hats | De Bono's six sequential lenses | Forces six angles onto the same material |
-| Second-Order Thinking | Munger's latticework of mental models | Traces downstream consequences of an existing idea |
-| Hermeneutic Circle | Whole-informs-parts-informs-whole interpretive method | Whole reframes parts; parts refine the whole |
-
-### The Director (Articulate)
-
-| Method | Specific reference | Fits because |
-| --- | --- | --- |
-| SMART Goals | Doran's 1981 Specific/Measurable/Achievable/Relevant/Time-bound | Makes intent checkable, not just aspirational |
-| User Stories + Acceptance Criteria | Mike Cohn's Agile format | Frames a need as testable, falsifiable intent |
-| PRD | Standard product-requirements-document format | Commits problem and requirements before building starts |
-| RFC / ADR | Nygard's Context-Decision-Consequences template | Records a decision's reasoning so it's challengeable |
-| The Pyramid Principle | Barbara Minto's MECE, conclusion-first structure | Leads with the answer, then structures support |
-| PR-FAQ | Amazon's "Working Backwards" pre-build press release | Writes the finished result before anything's built |
-
-### The Producer (Build)
-
-| Method | Specific reference | Fits because |
-| --- | --- | --- |
-| Pre-mortem | Gary Klein's 2007 HBR "Project Premortem" | Imagines failure first, to catch it early |
-| Definition of Done | Scrum Guide's completion-criteria artifact | Sets the checkable bar for "actually finished" |
-| MVP / Build-Measure-Learn | Eric Ries's Lean Startup loop | Ships the smallest real thing to learn from |
-| Kanban WIP Limits | Kanban Method's work-in-progress caps | Caps in-progress work so things get finished |
-| PDCA's "Do" phase | Deming/Toyota Plan-Do-Check-Act cycle | Executes the plan at real scale, for real |
-
-None of these are mandatory and none is "the" technique for a character — they're a vocabulary of well-trodden, nameable patterns to reach for instead of reasoning from a vague personality trait. See `.claude/skills/spiral/SKILL.md` for when it's appropriate to name one of these out loud versus translate it into plain language.
+Each character also draws on a menu of established, named techniques rather than one universal method per character — SMART goals and PR-FAQs for the Director, pre-mortems and Definition of Done for the Producer, Socratic questioning and first-principles thinking for the Muse, after-action reviews and blameless postmortems for the Critic. The full library, with specific sources and why each one fits, is in reference.md.
 
 ---
 
 ## The Stage Manager
 
-There is a fifth presence, but it is different in kind from the other four. The Muse, the Director, the Producer, and the Critic each own one specific stage — they're waiting inside it, ready to help you do that stage's work, but none of them will come looking for you. The Stage Manager owns none of the content. Its only job is deciding when it's time to go meet them, and making the introduction.
+There is a fifth presence, but it is different in kind from the other four. The Muse, the Director, the Producer, and the Critic each own one specific stage — they're waiting inside it, ready to help you do that stage's work, but none of them will come looking for you. The Stage Manager owns none of the content. Its only job is deciding when it's time to go meet them — a decision with a name, borrowed from the same theatre this cast came from: **calling the cue**. (See "The Cues" below for what happens at one.)
 
-This is not a hierarchy. The Stage Manager doesn't decide the order — the cycle already fixes that completely — and it doesn't outrank the cast. It only asks the question underneath all four of theirs: *is it time for the introduction?*
+This is not a hierarchy. The Stage Manager doesn't decide the order — the cycle already fixes that completely — and it doesn't outrank the cast. It only asks the question underneath all four of theirs: *is it time to call the cue?*
 
-The role changes shape depending on who's in the loop:
+That question isn't only asked passively, waiting for a natural pause between stages. Protecting momentum sometimes means forcing the issue mid-stage — closing down a Think that's overstaying its welcome, enforcing an end to circular creative options before anyone feels ready — because the Stage Manager's job was never to certify that a stage's content is finished, only that the whole system keeps moving. It shows up wherever momentum is under threat, not only at the four fixed cues.
 
-| Flow | Who plays the Stage Manager | Grounding |
-| --- | --- | --- |
-| **Human, solo** | Internal executive function — the transition/initiation faculty, distinct from the content-generating faculty | Zimmerman's self-regulated learning cycle; Gollwitzer's implementation intentions; executive-function research on task-initiation (the well-documented gap between having an idea and acting on it) |
-| **AI, solo** | Orchestrator logic — iteration budgets, reflection nodes, the state machine governing phase transitions | ReAct's missing Articulate step (below) is this failure mode by another name: no governance of when Think ends, so the loop thrashes or never converges |
-| **AI → Human** | Whichever side holds the authority to call the cue: the assistant nudging a stalled human, or the human cutting off an over-reasoning agent | Horvitz's mixed-initiative interaction research; automation bias (deferring the cue-call to the AI even when it's wrong) |
-| **Human → Human** | A distinct, named role in the group — not the person doing the Learning, Thinking, Articulating, or Building | Scrum Master; chief of staff; the literal theatrical stage manager, who calls cues but never appears onstage |
-| **AI → AI** | A supervisor/manager agent whose only output is whose turn it is and whether the phase is complete | Already shipped: LangGraph's supervisor pattern, AutoGen's `GroupChatManager`, CrewAI's hierarchical-process manager, MetaGPT's SOP-driven role router |
+The role changes shape depending on who's in the loop — a solo human, a solo AI, an AI and a human handing off to each other, a team of people, a team of agents. The full breakdown, with the academic and engineering grounding for each, is in reference.md.
 
 The consistency across all five is the point. In every flow, the Stage Manager never does Learn/Think/Articulate/Build work itself — and in every flow, its absence produces the same failure: stalling, thrashing, or false momentum. Not five different failure modes. One.
 
@@ -184,6 +124,20 @@ The precise term for this isn't multiplicity as pathology, it's **code-switching
 - **AI:** a context switch, in the plain operating-systems sense — a process's state is suspended, a different process's state is loaded in and executed, and something outside both of them keeps the scheduling bookkeeping across every swap. That bookkeeping layer isn't optional decoration; without it, "switching" is just amnesia.
 
 For an AI system this reframes what the Stage Manager actually does in solo operation. It isn't only the outside voice asking "is it time?" — it has to be able to condition itself into each stage's register (generative for Think, decisive for Articulate, resourceful for Build, evaluative for Learn), do that stage's work in that register, then step back out to the layer that tracks the whole arc and knows when the next switch is due. One operator, four registers, one continuous thread of oversight underneath all of them. That thread — not any single register — is the Stage Manager.
+
+---
+
+## The Cues
+
+Between every stage and the next there's a fixed point where whoever is doing the work — call them the Hero — crosses from one cast member's territory into another's. Theatre already has a word for that point: a **cue**. It isn't a metaphor reached for after the fact — calling cues is the Stage Manager's literal job, four times around the cycle, not once.
+
+A cue is not a formality to wave through. Crossing it means answering something real: given what the last stage actually produced, what happens now? Neither cast member either side of the cue can answer that alone — the one being left knows what just happened, the one about to be met knows what's needed next. What happens at a cue is called **Notes**: a check of what's understood against what's needed, before the Hero is allowed to move.
+
+Most Notes are one clause, wordless, over as soon as they start — the everyday version of "that's enough, go," already described above as the Stage Manager quietly deciding it's time. Some cues earn the full version instead: several cast members speaking in turn before a direction is committed to. That fuller version isn't a new mechanism — it's "Convening the cast for review" (see the skill file), renamed for what it structurally is: a full Notes session, held at a cue, instead of the ordinary quiet one. See reference.md's "Deciding When to Hold Full Notes" for when that expense is worth paying.
+
+The four cues already have names — recovered rather than invented. In a 2011–2012 version of this framework, when the stages were still Creation, Learning, Analysis, and Planning, the transitions between them were already called **EESS**: Elect, Enable, Sense, Separate — driven by a connecting force called Enertia, which this document now calls Momentum. Mapped onto today's stages, the fit is exact — the mapping table is in reference.md.
+
+Every nested cycle the fractal property opens up has its own four cues, usually quiet ones — see reference.md's "Deciding When to Hold Full Notes" for how to tell the difference.
 
 ---
 
@@ -227,14 +181,7 @@ This fractal property means the framework is never the wrong size. If a stage fe
 
 Where you start on the Spiral is up to you.
 
-People have a **home box** — the stage they gravitate toward, where they spend disproportionate time. They also have a **neglected character** — the one they most often avoid meeting.
-
-| Entry point | Who does this | Risk |
-| --- | --- | --- |
-| **Learning first** | Researchers, readers, the cautious | Never meeting the Director |
-| **Thinking first** | Strategists, overthinkers | Thinking without sufficient raw material |
-| **Articulating first** | Managers, executors | Articulating based on assumptions, not evidence |
-| **Building first** | Builders, hackers, the impatient | Learning only from failure, expensively |
+People have a **home box** — the stage they gravitate toward, where they spend disproportionate time. They also have a **neglected character** — the one they most often avoid meeting. Researchers and readers tend to enter through Learning, and risk never meeting the Director; strategists and overthinkers enter through Thinking, and risk thinking without sufficient raw material; managers and executors enter through Articulating, and risk articulating from assumptions rather than evidence; builders and hackers enter through Building, and risk learning only from failure, expensively. (The table version is in reference.md.)
 
 None of these is wrong. All of them are incomplete without the others.
 
@@ -242,18 +189,7 @@ The framework does not judge your entry point. It asks: which character have you
 
 ## Relation to Other Frameworks
 
-The matrix is the key to these comparisons. Spiral is not derived from any of these — it predates most of them in the author's practice — but the overlaps are illuminating.
-
-| Framework | Learn | Think | Articulate | Build | What Spiral adds |
-| --- | --- | --- | --- | --- | --- |
-| **Bloom's Taxonomy** | Remember / Understand | Analyse / Evaluate | — | Create | The matrix; the cast; non-linearity |
-| **Kolb's Cycle** | Concrete Experience | Reflective Observation | Abstract Conceptualisation | Active Experimentation | The cast; momentum; fractal property |
-| **ReAct (AI agents)** | Observe | Think | — | Act | **Articulate** — the missing stage in most AI agents |
-| **OODA Loop** | Observe | Orient | Decide | Act | Fractal property; momentum; home boxes |
-| **Six Thinking Hats** | White Hat | Red/Black/Yellow | — | Green Hat | The matrix; the spiral structure; the Blue Hat is Six Thinking Hats' own Stage Manager, not an Articulate-analog — the same missing-Articulate gap ReAct has, just less visible |
-| **Hermeneutic Circle** | — | The whole circle | — | — | Spiral externalises what the circle keeps internal |
-| **Belbin Team Roles** | — | — | — | — | Independent validation for **the Stage Manager**: Belbin's Coordinator role was originally named "Chairman" before being renamed — the same correction, authority word to process word, that this framework just made |
-| **Multi-agent orchestration** (AutoGen, CrewAI, LangGraph) | Retrieval / tool nodes | Worker-agent reasoning | Task routing | Worker-agent execution | Confirms **the Stage Manager** is buildable: supervisor/manager agents already do this exact job in production, without performing any Learn/Think/Articulate/Build work themselves |
+The matrix is the key to these comparisons. Spiral is not derived from any of these — it predates most of them in the author's practice — but the overlaps are illuminating. The full comparison table (Bloom's Taxonomy, Kolb's Cycle, ReAct, OODA, Six Thinking Hats, the Hermeneutic Circle, Belbin Team Roles, multi-agent orchestration) is in reference.md.
 
 The most important comparison is **ReAct**. ReAct goes Observe → Reason → Act. Its middle step covers the same territory Spiral calls Think — we've just chosen a plainer word for it. The gap is what comes after: ReAct has no Articulate stage. This is not an oversight — it reflects a genuine architectural assumption that agents should be fast and flexible. Spiral says: fast and flexible is fine for simple cycles, but without meeting the Producer at Articulate→Build, complex work collapses.
 
@@ -263,15 +199,7 @@ A second comparison is worth naming even though it isn't a single framework: mul
 
 ## Spiral and the Dimensions of Knowledge
 
-Each stage operates across multiple **reach levels** — the scope of knowledge being drawn on:
-
-| Reach | What it is | Example in Spiral |
-| --- | --- | --- |
-| **World** | External peer knowledge | Conference corpus, published research |
-| **Enterprise** | Organisational knowledge | Company positioning, strategy documents |
-| **Division** | Team/department knowledge | GTM decisions, product roadmap |
-| **Team** | Immediate colleagues | Slack conversations, shared decisions |
-| **Self** | Personal knowledge and experience | Your own expertise, intuition, history |
+Each stage operates across multiple **reach levels** — the scope of knowledge being drawn on: World, Enterprise, Division, Team, and Self, each broader or narrower than the last. (The table with examples is in reference.md.)
 
 The richest thinking happens when multiple reach levels are in play simultaneously. A decision informed only by World knowledge (what the industry thinks) without Self knowledge (what you specifically know) is incomplete. A decision informed only by Self knowledge without World knowledge is parochial.
 
@@ -279,30 +207,17 @@ The richest thinking happens when multiple reach levels are in play simultaneous
 
 ## Applying Spiral to AI System Design
 
-Spiral was developed for human cognition. It maps cleanly onto AI system design because good AI systems are trying to replicate good thinking.
-
-| Spiral stage | What an AI system does |
-| --- | --- |
-| **Learn** | Corpus ingestion, retrieval, contextual grounding |
-| **Think** | Reasoning, chain-of-thought, multi-perspective critique |
-| **Articulate** | Structured output, task decomposition, response framing |
-| **Build** | Generation, tool use, final response |
+Spiral was developed for human cognition. It maps cleanly onto AI system design because good AI systems are trying to replicate good thinking — Learn as corpus ingestion and retrieval, Think as reasoning and critique, Articulate as structured output, Build as generation and tool use. (The table is in reference.md.)
 
 **The retrieval question** is really a Muse question: given everything in the corpus, which parts are worth thinking with for this query? This is what RAG architectures are trying to solve — and what pre-digested intelligence layers (like LLM Council-generated vitals files) solve more elegantly by doing that work at ingestion time rather than query time.
 
 **The system prompt** is the Enterprise/Division/Team knowledge that sits above the World corpus. It is the difference between a system that knows what the industry thinks and a system that knows what *you* think about what the industry thinks.
 
-## A Note on Origin
+A full multi-voice Notes session (see "The Cues," above) costs real tokens, latency, and attention, so it shouldn't be the default at every cue — reference.md's "Deciding When to Hold Full Notes" gives the exact signals worth scoring a cue against, framed as literal branching logic a Claude Code implementation can use.
 
-This framework was first developed in 1999, while working out the quality criteria for Keys4IT — Peter was barely twenty at the time. The original formulation was Learn, Think, Plan, Do — with a matrix identifying the source/target directionality of each stage.
+## Origin, briefly
 
-Over the following twenty-seven years it has been renamed more than once (Spiral, previously CLAP, before that IDOFOBI/FOBI and LTPD, Perpetual Idea Machine), extended (bridges, gateways, a cast of characters), and applied to personal decisions, organisational change, and now AI system design.
-
-It was rediscovered and formalised in a single conversation on 2026-06-29 — which is itself a demonstration of the fractal property. The conversation was a Spiral cycle about Spiral.
-
-It was renamed a second time on 2026-07-02, from CLAP to Spiral, once the stage names it had grown into — Learn, Think, Articulate, Build — no longer spelled the old acronym. Spiral turned out to be the more precise word regardless: not a flat spiral that grows outward, but a climbing one that keeps its shape and simply gains height.
-
-The framework has survived twenty-seven years not because it was written down carefully, but because it was *true enough to keep being useful.* This document is the first attempt to write it down carefully.
+This framework is decades old: first developed in 1999, renamed more than once since, rediscovered and properly written down in 2026. The full history — every name it's worn, including one, "the FOBI controller," that turns out to have been the Stage Manager all along — is in [`origin.md`](./origin.md).
 
 ## There's more to think about...
 
