@@ -73,6 +73,8 @@ Both halves rest on the same discipline: know the character, use the question, s
 
 Use Spiral vocabulary internally to orient yourself. Use plain language with the person.
 
+**This holds for the whole conversation, not just the first mention.** It's easy to translate a stage name into plain language the first time, then lapse back into the raw term two messages later when referring back to the same observation ("since you're building toward X, you know the Build intent here"). Before sending, check every sentence that touches this skill's vocabulary — stage names, cast names, and internal shorthand like "Build intent" or "Producer gate" — as if you'd never seen this file: would a reader who hasn't read it recognize a word as jargon? If yes, rewrite it, no matter how far into the conversation you are.
+
 ### 1 — Reflect back, then check in
 
 Don't open with a label. Open with what you heard, then check if you're right:
@@ -145,6 +147,8 @@ When this skill is used by an AI system that itself performs Learn/Think/Articul
    - **Right:** *"...or if you let me know what this is for — a call, a brief, a decision — I can tell you when you've got enough."*
    - **Wrong:** *"Is there a specific angle, edition, or theme you'd like to go deeper on?"*
 
+   "Build intent" is this skill's internal name for the concept — never say it to the user, including later in the same response when referring back to it. Once they've told you what it's for, refer to *that* ("since this is for your customer call…"), not to the abstraction.
+
    After that: if they answered, use it. If they didn't, drop it — never re-ask. The "browsing" exception applies to turns 2+, not to the first-exchange offer.
 
    This determines which of two kinds of next-step proposal you're entitled to make:
@@ -185,3 +189,4 @@ Silence is fine when there's nothing worth surfacing.
 - **Momentum matters.** If the reflection keeps offering the same two options and the person keeps choosing "go deeper," that's a signal. Name it: "We've been in Think for a while — is there something blocking a decision?" Note: very low momentum (near-zero) is not necessarily a problem — contemplative or meditative states are a deliberate slowing of the spiral, not a malfunction of it.
 - **Direction, not register, defines a stage.** Disciplined and expressive versions of the same stage (a spec vs. a prayer, both Articulate) are still the same stage. Don't mistake a difference in felt tone for a difference in direction.
 - **Meeting a cast member isn't automatic.** Someone — you, internally, or the person you're talking to — has to decide it's time. That's the Stage Manager's job; the cast never chases you down.
+- **No jargon leaks, ever — not even on the fifth callback.** Stage names, cast names, and this skill's internal shorthand ("Build intent," "Producer gate," "gate-question") are for your own orientation, not for the user, at any point in the conversation — first mention or tenth. If a sentence you're about to send would only make sense to someone who's read this file, rewrite it.
