@@ -13,12 +13,12 @@ Two tiers below. **Core Concepts** are facts — what a term *is*, no rationale 
 - **Articulate** — Internal source → external target. Internal reasoning made legible to someone or something outside yourself.
 - **Build** — External source → external target. Acting on the world; the world responds; something new exists that didn't before.
 - **The Matrix** — The 2×2 grid of source (where input comes from) × target (where output goes) that the four stages derive from.
-- **The Cast** — The four characters, one per stage: the Muse (Think), the Director (Articulate), the Producer (Build), the Critic (Learn).
+- **The Cast** — The four characters, one per stage: the Muse (Think), the Director (Articulate), the Producer (Build), the Critic (Learn) — each acting as a coach to the Hero, not an advisor: draws out what the Hero already has rather than supplying an answer.
 - **The Muse** — Owns Think. Turns what Learn gathered into an actual idea.
 - **The Director** — Owns Articulate. Turns an idea into a take specific enough to be wrong.
 - **The Producer** — Owns Build. Turns a take into something that can actually be mounted.
 - **The Critic** — Owns Learn. Turns the verdict on what was Built into material for next time.
-- **The Stage Manager** — The fifth presence. Owns no content, only the cues — decides when it's time to move from one cast member to the next, and can act mid-stage, not only at a cue, when momentum is under threat.
+- **The Stage Manager** — The fifth presence. Owns no content, only the cues — decides when it's time to move from one cast member to the next, and can act mid-stage, not only at a cue, when momentum is under threat. A facilitator, in the formal sense: owns the process, not the content.
 - **Cue** — The fixed crossing point between one stage and the next. Four per cycle, named Separate, Elect, Enable, and Sense.
 - **Notes** — What happens at a cue: a check of what's understood against what's needed, before the Hero moves on. Quiet by default; a full multi-voice version exists ("Convening the cast for review" in the skill file — see "Usage," below, for when it earns its cost).
 - **Hero** — Whoever is actually doing the work and crossing the cues — a person, or an AI.
@@ -126,7 +126,7 @@ None of these are mandatory and none is "the" technique for a character — they
 | **Human, solo** | Internal executive function — the transition/initiation faculty, distinct from the content-generating faculty | Zimmerman's self-regulated learning cycle; Gollwitzer's implementation intentions; executive-function research on task-initiation (the well-documented gap between having an idea and acting on it) |
 | **AI, solo** | Orchestrator logic — iteration budgets, reflection nodes, the state machine governing phase transitions | ReAct's missing Articulate step is this failure mode by another name: no governance of when Think ends, so the loop thrashes or never converges |
 | **AI → Human** | Whichever side holds the authority to call the cue: the assistant nudging a stalled human, or the human cutting off an over-reasoning agent | Horvitz's mixed-initiative interaction research; automation bias (deferring the cue-call to the AI even when it's wrong) |
-| **Human → Human** | A distinct, named role in the group — not the person doing the Learning, Thinking, Articulating, or Building | Scrum Master; chief of staff; the literal theatrical stage manager, who calls cues but never appears onstage |
+| **Human → Human** | A distinct, named role in the group — not the person doing the Learning, Thinking, Articulating, or Building | Scrum Master; meeting facilitator; chief of staff; the literal theatrical stage manager, who calls cues but never appears onstage |
 | **AI → AI** | A supervisor/manager agent whose only output is whose turn it is and whether the phase is complete | Already shipped: LangGraph's supervisor pattern, AutoGen's `GroupChatManager`, CrewAI's hierarchical-process manager, MetaGPT's SOP-driven role router |
 
 ### Non-Linearity and Entry Points
@@ -159,6 +159,17 @@ None of these are mandatory and none is "the" technique for a character — they
 | **Think** | Reasoning, chain-of-thought, multi-perspective critique |
 | **Articulate** | Structured output, task decomposition, response framing |
 | **Build** | Generation, tool use, final response |
+
+### Decision Rights at a Cue (DACI)
+
+RACI is the wrong lens for who does what at a cue — its "Accountable" means answerable for the outcome, which sits awkwardly on a Stage Manager that explicitly owns no content. DACI fits because it separates authority to proceed from ownership of the work:
+
+| DACI role | Who plays it | Why |
+| --- | --- | --- |
+| **Driver** | The Hero | Owns getting the work done and actually crosses the cue |
+| **Approver** | The Stage Manager | Owns the call to proceed — "calls the cue" is exactly DACI's Approver, nothing more |
+| **Contributor** | The convened cast member(s) | Supply expertise and critique; never decide whether to move on |
+| **Informed** | Whoever the output ultimately reaches | Doesn't map onto a single fixed Spiral role — a reader, a stalled human, a downstream teammate — it depends on the flow in play |
 
 ### Deciding When to Hold Full Notes
 

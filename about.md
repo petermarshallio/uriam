@@ -96,6 +96,8 @@ Not "are you done?" — you are never done.
 
 None of them will come and get you, though. Knowing when to go find them is a different job entirely — that's the Stage Manager.
 
+This is the coaching relationship, not the advisory one: each character's job is to draw the next move out of the Hero, not hand it to them.
+
 Each character also draws on a menu of established, named techniques rather than one universal method per character — SMART goals and PR-FAQs for the Director, pre-mortems and Definition of Done for the Producer, Socratic questioning and first-principles thinking for the Muse, after-action reviews and blameless postmortems for the Critic. The full library, with specific sources and why each one fits, is in reference.md.
 
 ---
@@ -130,6 +132,8 @@ For an AI system this reframes what the Stage Manager actually does in solo oper
 ## The Cues
 
 Between every stage and the next there's a fixed point where whoever is doing the work — call them the Hero — crosses from one cast member's territory into another's. Theatre already has a word for that point: a **cue**. It isn't a metaphor reached for after the fact — calling cues is the Stage Manager's literal job, four times around the cycle, not once.
+
+Readers who know Cooper's Stage-Gate process will recognise the shape, but the word is deliberately different: a gate is a pass/fail checkpoint you seek approval to open, while a cue is a signal to enter — a smaller claim, and the one that actually fits a coaching relationship rather than a review board.
 
 A cue is not a formality to wave through. Crossing it means answering something real: given what the last stage actually produced, what happens now? Neither cast member either side of the cue can answer that alone — the one being left knows what just happened, the one about to be met knows what's needed next. What happens at a cue is called **Notes**: a check of what's understood against what's needed, before the Hero is allowed to move.
 
