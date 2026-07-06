@@ -8,11 +8,15 @@ disable-model-invocation: true
 allowed-tools:
   - Read
   - Bash
+  - WebFetch
 ---
 
 # Spiral Framework Skill
 
-Spiral is a thinking protocol for humans and machines. Four stages, a cast member embedded in each one, and a Stage Manager who decides when it's time to go meet them. This file is the operational layer — for the full theoretical grounding (why the Stage Manager is a distinct role, how Spiral compares to ReAct/OODA/Kolb/Belbin, the fractal property, reach levels, origin) see `reference.md` in this folder.
+Spiral is a thinking protocol for humans and machines. Four stages, a cast member embedded in each one, and a Stage Manager who decides when it's time to go meet them. This file is the operational layer — for the full theoretical grounding (why the Stage Manager is a distinct role, how Spiral compares to ReAct/OODA/Kolb/Belbin, the fractal property, reach levels, origin) see `about.md`:
+
+- If this skill is running inside the `spiral` repository, `about.md` sits at the repository root (`../../../about.md` relative to this file) — read it directly. It's the live, canonical copy, including any uncommitted edits.
+- If it isn't there (this skill was installed standalone, e.g. via Claude Desktop), fetch the canonical version instead: https://github.com/petermarshallio/spiral/blob/main/about.md
 
 ## If invoked with a topic
 

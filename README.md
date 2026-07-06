@@ -10,8 +10,8 @@ Any two minds that speak it — human or AI — can work together.
 
 | File | Purpose |
 | --- | --- |
-| [`about.md`](./about.md) | The full canonical framework |
-| [`.claude/skills/spiral/`](./.claude/skills/spiral/) | The skill bundle — `SKILL.md`, a `reference.md` link to `about.md`, and two momentum-logging scripts |
+| [`about.md`](./about.md) | The full canonical framework — the single source of truth |
+| [`.claude/skills/spiral/`](./.claude/skills/spiral/) | The skill bundle — `SKILL.md` plus two momentum-logging scripts. It reads `about.md` directly when it's running inside this repo, and falls back to fetching it from GitHub otherwise, so there's nothing bundled to keep in sync |
 
 ---
 
@@ -19,14 +19,7 @@ Any two minds that speak it — human or AI — can work together.
 
 **Claude Code:** drop the `.claude/skills/spiral/` folder into a project's `.claude/skills/` (project-only) or `~/.claude/skills/` (all your projects). It's discovered automatically — no restart needed.
 
-**Claude Desktop / claude.ai:** the bundle needs to travel as a self-contained zip, and `reference.md` is a symlink in this repo (it just points at `about.md`, so there's one source of truth instead of two copies to keep in sync). Zip tools don't reliably preserve symlinks, so resolve it into a real file first, in a copy — not in place:
-
-```bash
-cp -RL .claude/skills/spiral /tmp/spiral-skill   # -L follows the symlink into a real file
-cd /tmp && zip -r spiral-skill.zip spiral-skill
-```
-
-Then **Customize** → **Skills** → upload `spiral-skill.zip`.
+**Claude Desktop / claude.ai:** zip the `.claude/skills/spiral` folder as-is and upload it via **Customize** → **Skills**. Outside this repo, the skill has no local `about.md` to read, so it fetches the canonical version from GitHub the first time it needs the full reference — that requires the skill to have web access on whatever surface it's running on.
 
 The skill requires explicit invocation (see below) — say the word to start it, no ambient auto-detection.
 

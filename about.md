@@ -121,6 +121,19 @@ The role changes shape depending on who's in the loop:
 
 The consistency across all five is the point. In every flow, the Stage Manager never does Learn/Think/Articulate/Build work itself — and in every flow, its absence produces the same failure: stalling, thrashing, or false momentum. Not five different failure modes. One.
 
+### One operator, four registers
+
+Everything above describes the Cast as company you meet. But for a solo operator — a single person working alone, or a single AI with no other agents to call on — there's no one else in the room. The Muse's associative looseness, the Director's decisiveness, the Producer's resourcefulness, the Critic's evaluative honesty: you have to produce all four yourself, in turn. Meeting the cast, solo, means becoming them for as long as their stage needs you to.
+
+This is a different difficulty than the one Momentum names. Momentum failure is about *time* — staying too long in one stage. This is about *register* — being unable to actually think with the Muse's looseness while still holding the Critic's honesty from the stage before, or unable to drop the Director's decisiveness once Build needs the Producer's improvisation instead. Everyone is fluent in their home box's register and clumsy in at least one other — usually, unsurprisingly, the neglected character's.
+
+The precise term for this isn't multiplicity as pathology, it's **code-switching**: deliberately changing register to fit context while one continuous self persists underneath, doing the switching. Two grounded precedents, one per register:
+
+- **Human:** Transactional Analysis' Parent/Adult/Child ego states — distinct behavioral registers a person moves between deliberately, without losing continuity of self. De Bono's own Blue Hat (see the framework comparison below) is the same idea inside a framework Spiral is already compared to: it isn't a fifth hat alongside the other four, it's the process-control hat, worn by whoever decides which of the other four the group should be wearing — and it can think in any of them when needed.
+- **AI:** a context switch, in the plain operating-systems sense — a process's state is suspended, a different process's state is loaded in and executed, and something outside both of them keeps the scheduling bookkeeping across every swap. That bookkeeping layer isn't optional decoration; without it, "switching" is just amnesia.
+
+For an AI system this reframes what the Stage Manager actually does in solo operation. It isn't only the outside voice asking "is it time?" — it has to be able to condition itself into each stage's register (generative for Think, decisive for Articulate, resourceful for Build, evaluative for Learn), do that stage's work in that register, then step back out to the layer that tracks the whole arc and knows when the next switch is due. One operator, four registers, one continuous thread of oversight underneath all of them. That thread — not any single register — is the Stage Manager.
+
 ---
 
 ## Momentum
@@ -190,7 +203,7 @@ The matrix is the key to these comparisons. Spiral is not derived from any of th
 | **Kolb's Cycle** | Concrete Experience | Reflective Observation | Abstract Conceptualisation | Active Experimentation | The cast; momentum; fractal property |
 | **ReAct (AI agents)** | Observe | Think | — | Act | **Articulate** — the missing stage in most AI agents |
 | **OODA Loop** | Observe | Orient | Decide | Act | Fractal property; momentum; home boxes |
-| **Six Thinking Hats** | White Hat | Red/Black/Yellow | Blue Hat | Green Hat | The matrix; the spiral structure |
+| **Six Thinking Hats** | White Hat | Red/Black/Yellow | — | Green Hat | The matrix; the spiral structure; the Blue Hat is Six Thinking Hats' own Stage Manager, not an Articulate-analog — the same missing-Articulate gap ReAct has, just less visible |
 | **Hermeneutic Circle** | — | The whole circle | — | — | Spiral externalises what the circle keeps internal |
 | **Belbin Team Roles** | — | — | — | — | Independent validation for **the Stage Manager**: Belbin's Coordinator role was originally named "Chairman" before being renamed — the same correction, authority word to process word, that this framework just made |
 | **Multi-agent orchestration** (AutoGen, CrewAI, LangGraph) | Retrieval / tool nodes | Worker-agent reasoning | Task routing | Worker-agent execution | Confirms **the Stage Manager** is buildable: supervisor/manager agents already do this exact job in production, without performing any Learn/Think/Articulate/Build work themselves |
