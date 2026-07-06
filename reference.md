@@ -13,15 +13,20 @@ Two tiers below. **Core Concepts** are facts — what a term *is*, no rationale 
 - **Articulate** — Internal source → external target. Internal reasoning made legible to someone or something outside yourself.
 - **Build** — External source → external target. Acting on the world; the world responds; something new exists that didn't before.
 - **The Matrix** — The 2×2 grid of source (where input comes from) × target (where output goes) that the four stages derive from.
+- **Actor** — A person or an AI system: whatever is capable of being assigned to a Role (from ArchiMate's Business Actor).
+- **Role** — A behavioural responsibility, not a person: Hero, Stage Manager, Muse, Director, Producer, Critic. One Actor can be assigned several Roles, including more than one within a single exchange (from ArchiMate's Business Role).
 - **The Cast** — The four characters, one per stage: the Muse (Think), the Director (Articulate), the Producer (Build), the Critic (Learn) — each acting as a coach to the Hero, not an advisor: draws out what the Hero already has rather than supplying an answer.
 - **The Muse** — Owns Think. Turns what Learn gathered into an actual idea.
 - **The Director** — Owns Articulate. Turns an idea into a take specific enough to be wrong.
 - **The Producer** — Owns Build. Turns a take into something that can actually be mounted.
 - **The Critic** — Owns Learn. Turns the verdict on what was Built into material for next time.
-- **The Stage Manager** — The fifth presence. Owns no content, only the cues — decides when it's time to move from one cast member to the next, and can act mid-stage, not only at a cue, when momentum is under threat. A facilitator, in the formal sense: owns the process, not the content.
+- **The Stage Manager** — The fifth Role, owning no content, only the process. Three concrete jobs: generating candidate cues (proposing what a crossing could look like, without unilateral authority to call it), hosting the Interaction where a cue actually gets decided (Notes), and self-declaring whichever Role's work is in progress so every Actor involved can track where things stand. Can act mid-stage, not only at a fixed cue, when momentum is under threat. A facilitator, in the formal sense: owns the process, not the content — and never the sole Approver; see "Decision Rights at a Cue (DACI)" below.
 - **Cue** — The fixed crossing point between one stage and the next. Four per cycle, named Separate, Elect, Enable, and Sense.
 - **Notes** — What happens at a cue: a check of what's understood against what's needed, before the Hero moves on. Quiet by default; a full multi-voice version exists ("Convening the cast for review" in the skill file — see "Usage," below, for when it earns its cost).
-- **Hero** — Whoever is actually doing the work and crossing the cues — a person, or an AI.
+- **Collaboration** — The set of Actors currently assigned to Roles for a given cycle (from ArchiMate's Business Collaboration: two or more roles working together).
+- **Interaction** — A full cycle, start to finish, performed jointly by a Collaboration (from ArchiMate's Business Interaction: the collective behaviour a Collaboration performs). Every cue's Notes is a smaller Interaction nested inside it — the Fractal Property, one level down.
+- **Ceremony** — Informal name for an Interaction in progress. Unlike Scrum's ceremonies, never schedule-bound: a Spiral Ceremony convenes when the work is ready, not on a clock.
+- **Hero** — The Role of doing the work and crossing the cues. Assigned to whichever Actor — a person, or an AI — is doing it right now.
 - **Momentum** — The rate at which the cycle moves. High: each revolution lands somewhere new. Low: spinning in place, avoiding the cast. False: skipping stages to move fast.
 - **Home box** — The stage someone gravitates toward, where they spend disproportionate time.
 - **Neglected character** — The cast member someone most often avoids meeting.
@@ -121,11 +126,13 @@ None of these are mandatory and none is "the" technique for a character — they
 
 ### The Stage Manager — Who Plays the Role
 
+This table describes who's *eligible* to hold the Role for a given flow type, not a fixed assignment for a whole exchange — within a single live AI ↔ Human exchange, the Role passes back and forth turn by turn (whoever proposes the next step, or reflects back what was just said, is holding it for that turn). See `about.md`'s "Facilitation can change hands" for the concrete case.
+
 | Flow | Who plays the Stage Manager | Grounding |
 | --- | --- | --- |
 | **Human, solo** | Internal executive function — the transition/initiation faculty, distinct from the content-generating faculty | Zimmerman's self-regulated learning cycle; Gollwitzer's implementation intentions; executive-function research on task-initiation (the well-documented gap between having an idea and acting on it) |
 | **AI, solo** | Orchestrator logic — iteration budgets, reflection nodes, the state machine governing phase transitions | ReAct's missing Articulate step is this failure mode by another name: no governance of when Think ends, so the loop thrashes or never converges |
-| **AI → Human** | Whichever side holds the authority to call the cue: the assistant nudging a stalled human, or the human cutting off an over-reasoning agent | Horvitz's mixed-initiative interaction research; automation bias (deferring the cue-call to the AI even when it's wrong) |
+| **AI → Human** | Neither side unilaterally — the call emerges from Notes, the joint check between them. The AI can generate candidate cues and self-declare its own stage; calling the cue for a human isn't its Role to hold alone | Horvitz's mixed-initiative interaction research; automation bias (deferring the cue-call to the AI even when it's wrong) is exactly the failure mode of skipping that joint check |
 | **Human → Human** | A distinct, named role in the group — not the person doing the Learning, Thinking, Articulating, or Building | Scrum Master; meeting facilitator; chief of staff; the literal theatrical stage manager, who calls cues but never appears onstage |
 | **AI → AI** | A supervisor/manager agent whose only output is whose turn it is and whether the phase is complete | Already shipped: LangGraph's supervisor pattern, AutoGen's `GroupChatManager`, CrewAI's hierarchical-process manager, MetaGPT's SOP-driven role router |
 
@@ -167,7 +174,7 @@ RACI is the wrong lens for who does what at a cue — its "Accountable" means an
 | DACI role | Who plays it | Why |
 | --- | --- | --- |
 | **Driver** | The Hero | Owns getting the work done and actually crosses the cue |
-| **Approver** | The Stage Manager | Owns the call to proceed — "calls the cue" is exactly DACI's Approver, nothing more |
+| **Approver** | *Emergent from Notes* — the joint Interaction between whoever holds Hero and whoever holds Stage Manager, not either Role's unilateral call | Neither Actor has complete knowledge of the situation, their own or the other's, so the call to proceed is negotiated, not owned — the second DACI cell here that resists a single fixed owner, alongside Informed below |
 | **Contributor** | The convened cast member(s) | Supply expertise and critique; never decide whether to move on |
 | **Informed** | Whoever the output ultimately reaches | Doesn't map onto a single fixed Spiral role — a reader, a stalled human, a downstream teammate — it depends on the flow in play |
 

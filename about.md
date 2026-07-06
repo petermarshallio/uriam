@@ -79,6 +79,8 @@ Build generates the raw material for the next Learn. The cycle continues.
 
 Each stage has someone already in it. Not a mechanism — a person, and each one wants something different from you. (The roster — which character owns which stage — is in reference.md; here's who they are.)
 
+Every character named here — plus the Hero and the Stage Manager, met below — is a Role, not a fixed person. Whoever picks one up, human or AI, is the Actor; the same Actor often holds several Roles in turn, sometimes within a single exchange, sometimes within the same handful of lines. (Strict definitions in reference.md.)
+
 The move through the spiral moves forward; you can't go back and reshoot yesterday's scene. You do not retreat to a previous stage, you complete
 the cycle and begin a new one, richer for the revolution you just completed.
 
@@ -104,9 +106,11 @@ Each character also draws on a menu of established, named techniques rather than
 
 ## The Stage Manager
 
-There is a fifth presence, but it is different in kind from the other four. The Muse, the Director, the Producer, and the Critic each own one specific stage — they're waiting inside it, ready to help you do that stage's work, but none of them will come looking for you. The Stage Manager owns none of the content. Its only job is deciding when it's time to go meet them — a decision with a name, borrowed from the same theatre this cast came from: **calling the cue**. (See "The Cues" below for what happens at one.)
+There is a fifth presence, but it is different in kind from the other four. The Muse, the Director, the Producer, and the Critic each own one specific stage — they're waiting inside it, ready to help you do that stage's work, but none of them will come looking for you. The Stage Manager owns none of the content. Its only job is flagging when it's time to go meet them — a moment with a name, borrowed from the same theatre this cast came from: **calling the cue**. (See "The Cues" below for what happens at one, and for why flagging it isn't the same as calling it alone.)
 
 This is not a hierarchy. The Stage Manager doesn't decide the order — the cycle already fixes that completely — and it doesn't outrank the cast. It only asks the question underneath all four of theirs: *is it time to call the cue?*
+
+Asking that question is not the same as answering it alone. The answer comes from Notes — a joint check with whoever's playing the Hero, not a call the Stage Manager makes and delivers. This matters most when the Stage Manager is an AI and the Hero is human: neither Actor has complete knowledge of themselves, let alone the other, so the crossing gets worked out between them, not decided by one and handed to the other.
 
 That question isn't only asked passively, waiting for a natural pause between stages. Protecting momentum sometimes means forcing the issue mid-stage — closing down a Think that's overstaying its welcome, enforcing an end to circular creative options before anyone feels ready — because the Stage Manager's job was never to certify that a stage's content is finished, only that the whole system keeps moving. It shows up wherever momentum is under threat, not only at the four fixed cues.
 
@@ -127,6 +131,10 @@ The precise term for this isn't multiplicity as pathology, it's **code-switching
 
 For an AI system this reframes what the Stage Manager actually does in solo operation. It isn't only the outside voice asking "is it time?" — it has to be able to condition itself into each stage's register (generative for Think, decisive for Articulate, resourceful for Build, evaluative for Learn), do that stage's work in that register, then step back out to the layer that tracks the whole arc and knows when the next switch is due. One operator, four registers, one continuous thread of oversight underneath all of them. That thread — not any single register — is the Stage Manager.
 
+### Facilitation can change hands
+
+Everything above assumes one Actor holds the Stage Manager Role for a whole exchange. That's the solo case. In a live conversation between two Actors — a human and an AI, say — it isn't what actually happens: whoever proposes a candidate next step, whoever reflects back what's just been said, whoever asks "is that fair?" is holding the Stage Manager Role for that turn, and it passes back and forth within a single exchange, sometimes more than once in the same handful of lines. This is different from code-switching, which is one Actor moving between all four Cast Roles solo — this is two Actors sharing custody of one Role, the way facilitation visibly shifts in a well-run meeting when someone other than the designated facilitator says "should we park this and move on?" reference.md's table of who plays the Stage Manager per flow type describes who's eligible, not a fixed assignment for the whole exchange.
+
 ---
 
 ## The Cues
@@ -138,6 +146,8 @@ Readers who know Cooper's Stage-Gate process will recognise the shape, but the w
 A cue is not a formality to wave through. Crossing it means answering something real: given what the last stage actually produced, what happens now? Neither cast member either side of the cue can answer that alone — the one being left knows what just happened, the one about to be met knows what's needed next. What happens at a cue is called **Notes**: a check of what's understood against what's needed, before the Hero is allowed to move.
 
 Most Notes are one clause, wordless, over as soon as they start — the everyday version of "that's enough, go," already described above as the Stage Manager quietly deciding it's time. Some cues earn the full version instead: several cast members speaking in turn before a direction is committed to. That fuller version isn't a new mechanism — it's "Convening the cast for review" (see the skill file), renamed for what it structurally is: a full Notes session, held at a cue, instead of the ordinary quiet one. See reference.md's "Deciding When to Hold Full Notes" for when that expense is worth paying.
+
+Zoom out one level and a full cycle, start to finish, is itself a unit of joint behaviour — architecture frameworks like ArchiMate call this an Interaction, performed by a Collaboration of whichever Actors hold which Roles. A cue's Notes is a smaller Interaction nested inside the larger one, the Fractal Property applied to the cycle itself rather than to a single stage. Informally, call a running Interaction a Ceremony — just remember a Spiral Ceremony convenes when the work is ready, not on Scrum's schedule.
 
 The four cues already have names — recovered rather than invented. In a 2011–2012 version of this framework, when the stages were still Creation, Learning, Analysis, and Planning, the transitions between them were already called **EESS**: Elect, Enable, Sense, Separate — driven by a connecting force called Enertia, which this document now calls Momentum. Mapped onto today's stages, the fit is exact — the mapping table is in reference.md.
 
@@ -245,4 +255,8 @@ Two people, each moving through their own spiral, might relate the way two voice
 | The other person actually crossing | Resolution |
 | Two independent, self-coherent spirals sounding together over time | Counterpoint |
 
-This is a human-to-human proposition, not yet an agent-to-human one — a different claim than the operating modes in `.claude/skills/spiral/SKILL.md`. Undeveloped. Worth sitting with.
+This started as a human-to-human proposition, but the agent-to-human version turned out to be closer than it looked: the skill file's two operating modes — guiding the user's spiral, and sharing the agent's own — are exactly two Actors' individual spirals, and Notes is the counterpoint between them. What's still undeveloped is whether the musical vocabulary itself survives the move — does an AI declining to advance actually read as a suspension the way it would between two humans, or does that need its own term? Worth sitting with.
+
+**What happens when two separate spirals notice each other?**
+
+Not two voices in one conversation — two entirely different cycles, each with its own full cast, running at once without either one aware of the other by default. A Stage Manager operating at a high enough Reach Level might notice that one cycle's Learn stage just landed exactly where another cycle's Critic left off, and suggest a route for cooperation between them — something neither cycle's own Hero would think to look for, since neither is watching the other. Different from the Fractal Property, which nests cycles inside each other: this is cycles running alongside each other. A different scale of claim than anything else in this document, and genuinely unresolved — including whether the noticing Stage Manager needs visibility into both cycles itself, or whether it's really two separate Stage Managers signalling to each other.
