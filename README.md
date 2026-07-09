@@ -11,15 +11,13 @@ Any two minds that speak it — human or AI — can work together.
 | [`about.md`](./about.md) | The narrative explanation — why the framework works |
 | [`reference.md`](./reference.md) | Strict definitions and lookup tables |
 | [`origin.md`](./origin.md) | The framework's history |
-| [`.claude/skills/spiral/`](./.claude/skills/spiral/) | The skill bundle — just `SKILL.md`. It reads the three files above directly when running inside this repo, and falls back to fetching them from GitHub otherwise, so there's nothing bundled to keep in sync |
+| [`SKILL.md`](./SKILL.md) | The operational layer — how to actually run Spiral in a live conversation |
 
-## Installation
+## Using it
 
-**Claude Code:** drop the `.claude/skills/spiral/` folder into a project's `.claude/skills/` (project-only) or `~/.claude/skills/` (all your projects). It's discovered automatically — no restart needed.
+There's nothing to install. Point an AI assistant at this repo (or paste in `SKILL.md`, alongside the other three files if it can't read them directly) and ask it to Spiral with you — see below.
 
-**Claude Desktop / claude.ai:** zip the `.claude/skills/spiral` folder as-is and upload it via **Customize** → **Skills**. Outside this repo, the skill has no local `about.md` to read, so it fetches the canonical version from GitHub the first time it needs the full reference — that requires the skill to have web access on whatever surface it's running on.
-
-The skill requires explicit invocation (see below) — say the word to start it, no ambient auto-detection.
+Spiral requires explicit invocation — say the word to start it, no ambient auto-detection.
 
 ## Try it now
 
