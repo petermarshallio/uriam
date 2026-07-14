@@ -170,19 +170,25 @@ Every nested cycle the fractal property opens up has its own four cues, usually 
 
 ## Momentum
 
-Momentum is not a stage. It is a property of the whole system — the rate at which you move through the spiral. The Stage Manager is what embodies that property in practice: not a sixth stage, but the role that exists to protect momentum wherever it's under threat.
+Momentum is not a stage. It is a property of the whole system — but it isn't quite the same thing as raw speed, and the difference is worth naming.
+
+**Velocity** is the raw rate of movement: how fast an Actor is producing and receiving, full stop. Velocity alone says nothing about whether that motion is actually going anywhere — a person spinning their wheels in Examining can have very high Velocity and zero real progress.
+
+**Continuity** is what turns movement into a genuine handoff from one stage to the next: what a stage produces (its target) has to be what the next stage actually draws on (its source), the same type carried forward — internal understanding feeding internal reasoning, a plan already externalised feeding the world's actual response. When that match breaks — when something else arrives instead of what was just produced — the next stage isn't continuing this thread at all.
+
+**Momentum**, properly, is Velocity counted only across the transitions that preserve Continuity and don't double back onto the same stage — the rate of genuine progress round the cycle, not just activity. The Stage Manager is what embodies this property in practice: not a sixth stage, but the role that exists to protect it wherever it's under threat.
 
 **High momentum:** each revolution lands you somewhere genuinely new. The cast shows up readily because sufficient work was done in each stage.
 
-**Low momentum:** spinning on the same level. Stuck in Examining. Avoiding the cast. Returning to Internalising because the Director was never met.
+**Stagnation:** Velocity spent looping on the same stage, no matter how much churn happens inside it. Stuck in Examining. Avoiding the cast. Returning to Internalising because the Director was never met.
 
-**False momentum:** moving fast but skipping stages. Lots of Interacting without enough Internalising or Examining. The house gets built quickly. Then the wolf arrives.
+**False momentum:** Velocity without Momentum — moving fast, but along a path that breaks Continuity or skips stages. Lots of Interacting without enough Internalising or Examining. The house gets built quickly. Then the wolf arrives.
 
 Momentum is killed by:
 
-- Perfectionism in Examining (the thinking trap)
+- Perfectionism in Examining (the thinking trap) — Stagnation by another name
 - Avoiding the Witness (the control trap) — refusing to let go long enough to see what actually happens
-- Insufficient Internalising before Examining (the opinion trap)
+- Insufficient Internalising before Examining (the opinion trap) — a Continuity break, building on something other than what was actually gathered
 
 Momentum is built by:
 

@@ -28,7 +28,10 @@ Two tiers below. **Core Concepts** are facts — what a term *is*, no rationale 
 - **Interaction** — A full cycle, start to finish, performed jointly by a Collaboration (from ArchiMate's Business Interaction: the collective behaviour a Collaboration performs). Every cue's Notes is a smaller Interaction nested inside it — the Fractal Property, one level down.
 - **Ceremony** — Informal name for an Interaction in progress. Unlike Scrum's ceremonies, never schedule-bound: a Spiral Ceremony convenes when the work is ready, not on a clock.
 - **Hero** — The Role of doing the work and crossing the cues. Assigned to whichever Actor — a person, or an AI — is doing it right now.
-- **Momentum** — The rate at which the cycle moves. High: each revolution lands somewhere new. Low: spinning in place, avoiding the cast. False: skipping stages to move fast.
+- **Velocity** — The raw rate at which an Actor moves through transitions. Says nothing about which ones — churn and genuine progress both register.
+- **Continuity** — A transition preserves Continuity when the completing stage's target and the next stage's source share the same type (Internal→Internal, External→External) — what was produced is genuinely what the next stage draws on, not swapped for something else mid-transit.
+- **Momentum** — Velocity counted only across transitions that preserve Continuity and don't return to the same stage: the rate of genuine progress round the cycle, not just activity. High: each revolution lands somewhere new. False: high Velocity that isn't Momentum — activity that breaks Continuity or returns to the same stage, without advancing.
+- **Stagnation** — Zero Momentum from returning to the same stage: the same stage recurring, regardless of how much Velocity is spent inside it.
 - **Home box** — The stage someone gravitates toward, where they spend disproportionate time.
 - **Neglected character** — The cast member someone most often avoids meeting.
 - **The Fractal Property** — Every stage is itself a full Spiral cycle; the framework applies recursively at any granularity, cues included.
