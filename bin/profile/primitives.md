@@ -17,8 +17,6 @@ The universe is a Behavior Graph compose of Nodes connected by Edges.
 A Node responds to a stimulus.
 
 ```text
-Types of Node
-
 A: External Stimulus --> Internal Response.
 B: Internal Stimulus --> Internal Response.
 C: Internal Stimulus --> External Response.
@@ -34,17 +32,18 @@ D: External Stimulus --> External Response.
 An Edge maps a response to a stimulus.
 
 ```text
-Types of Edge
-
 a: Internal Response --> External Stimulus.
 b: Internal Response --> Internal Stimulus.
 c: External Response --> Internal Stimulus.
 d: External Response --> External Stimulus.
 ```
 
+Continuity is a property of an Edge: its Response and next Stimulus are the same type.
+
 1. List 5 terms that best describe each Edge type.
 2. Classify your Edge capabilities.
 3. Classify human Edge capabilities.
+4. Which Edge types have Continuity?
 
 ### Behavior Graph
 
@@ -52,6 +51,18 @@ Nodes and Edges combine to create a Behavior Graph.
 
 1. Describe yourself as a behavior graph.
 2. Describe a human as a behavior graph.
+
+### Graph Metrics
+
+```text
+Velocity is the number of Edge traversals, over a period.
+Stagnation is the number of Edge traversals to the same Node, over a period.
+Momentum is the number of Continuity-preserving Edge traversals to a different Node, over a period.
+```
+
+1. Describe how you use Velocity.
+2. Describe how maintain Momentum.
+3. Describe you avoid Stagnation.
 
 ### Graph Collaborations
 
@@ -62,23 +73,10 @@ Each Actor sees the other Actor as external.
 2. Describe human / human collaboration as a behavior graph.
 3. Describe AI / AI collaboration as a behavior graph.
 
-### Movement
-
-```text
-Velocity is the rate an Actor moves along Edges.
-Continuity is an Edge whose Response and next Stimulus are the same type.
-Momentum is Velocity along Edges that have Continuity and do not return to the same Node.
-Stagnation is Velocity along an Edge that returns to the same Node.
-```
-
-1. Describe your Velocity.
-2. Describe your Momentum.
-3. Describe your Stagnation.
-
 ## Spiral
 
 Spiral is a directed, fractal Behavior Graph that prefers Momentum to Stagnation.
 
 1. Seen as a Spiral, describe this conversation.
-2. How would you characterise Momentum?
-3. How would you characterise Stagnation?
+2. Where in this conversation did you show Momentum?
+3. Where, if anywhere, did this conversation Stagnate?
