@@ -51,8 +51,7 @@ python run.py
 That's the whole entrypoint -- there's no separate `run.sh`. With no flags,
 `run.py` opens an interactive menu: every configured model, newest release
 first, pick a number to run it (repeat as many times as you like), `a` to run
-everything, `m` to build the cross-model metastudy from whatever's already
-run, `x` to quit.
+everything, `x` to quit.
 
 **What it produces**, under `bin/profile/YYYYMMDD/` (today's date):
 
@@ -60,7 +59,6 @@ run, `x` to quit.
   its own `manifest.json` (status, token usage, cost, git sha of the test
   material) plus one `.md` file per `instructions.md` section (or `ERROR.md`
   if that model's run failed)
-- `metastudy.md` -- the cross-model synthesis, once you've built it
 
 Ollama itself is managed for you -- `run.py` starts the local service the
 first time it's actually needed, and shuts down only the instance *it*
@@ -109,13 +107,11 @@ run.py                           orchestrates a run -- interactive menu by defau
 lib/providers.py                 Anthropic + Ollama chat clients, one interface
 lib/ollama_service.py            starts/stops the local Ollama service on demand
 lib/pricing.py                   token usage -> USD, from models.yaml's pricing fields
-lib/metastudy.py                 builds the cross-model synthesis report
 YYYYMMDD/                        one folder per run date
   <provider>__<label>/             one self-contained folder per model run
     manifest.json                    status, token usage, cost, git sha of the test material
     <NN>-<section-slug>.md           one file per instructions.md section
     ERROR.md                         written instead of the above, if that model's run failed
-  metastudy.md                     cross-model synthesis (skip with --skip-metastudy)
 ```
 
 ## The interactive menu
@@ -134,5 +130,4 @@ Non-interactive flags exist for scripting:
 python run.py --all                 # every model in models.yaml, no menu
 python run.py --only anthropic      # skip Ollama
 python run.py --models haiku-4-5    # just one model, by its models.yaml label
-python run.py --skip-metastudy      # collect transcripts, skip the synthesis call
 ```

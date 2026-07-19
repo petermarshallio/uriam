@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Runs primitives.md / instructions.md against configured models and, by
-default, synthesizes a cross-model metastudy from the results.
+"""Runs primitives.md / instructions.md against configured models.
 
 Each `##` section in instructions.md becomes one conversation turn -- all of
 that section's numbered questions are sent together in a single message, and
@@ -10,7 +9,7 @@ its section files -- no shared file that every model run has to coordinate
 writes to.
 
 No selection flags + a real terminal -> interactive menu (pick a model,
-run it, repeat; 'a' for all, 'm' for metastudy-only, 'q' to quit).
+run it, repeat; 'a' for all, 'q' to quit).
 
 Usage:
     python run.py                       # interactive menu
@@ -18,7 +17,6 @@ Usage:
     python run.py --date 20260719
     python run.py --only anthropic      # skip Ollama
     python run.py --models haiku-4-5    # just one, by its models.yaml label
-    python run.py --skip-metastudy      # collect transcripts only
 """
 
 from __future__ import annotations
@@ -41,7 +39,6 @@ from rich.prompt import Prompt
 from rich.table import Table
 import yaml
 
-from lib.metastudy import build_metastudy
 from lib.ollama_service import OllamaService
 from lib.pricing import estimate_cost, format_usd
 from lib.providers import get_provider
@@ -54,7 +51,6 @@ LIVE_PREVIEW_CHARS = 50
 PROFILE_DIR = Path(__file__).parent
 PRIMITIVES_PATH = PROFILE_DIR / "primitives.md"
 INSTRUCTIONS_PATH = PROFILE_DIR / "instructions.md"
-REFERENCE_PATH = PROFILE_DIR.parent.parent / "reference.md"
 MODELS_CONFIG_PATH = PROFILE_DIR / "models.yaml"
 
 SECTION_RE = re.compile(r"^##\s+(.*)")
@@ -275,20 +271,6 @@ def run_one(
     save_model_manifest(model_dir, manifest)
 
 
-def run_metastudy_step(run_dir: Path, synthesis_model: str, synthesis_price: tuple[float | None, float | None]) -> None:
-    if not any(run_dir.glob("*/*.md")):
-        log.warning("No transcripts yet -- run at least one model first.")
-        return
-
-    log.info("Building metastudy...")
-    result = build_metastudy(run_dir, PRIMITIVES_PATH, REFERENCE_PATH, synthesis_model)
-    (run_dir / "metastudy.md").write_text(result.report)
-
-    price_in, price_out = synthesis_price
-    cost = estimate_cost(result.input_tokens, result.output_tokens, price_in, price_out)
-    log.info(f"[green]Metastudy written[/] -> {run_dir / 'metastudy.md'} ({format_usd(cost)})")
-
-
 def build_menu_table(model_specs: list[dict]) -> Table:
     table = Table(title="Uriam Model Profiler")
     table.add_column("#", justify="right", style="bold")
@@ -332,8 +314,6 @@ def interactive_menu(
     system_prompt: str,
     sections: list[tuple[str, list[str]]],
     shas: tuple[str | None, str | None],
-    synthesis_model: str,
-    synthesis_price: tuple[float | None, float | None],
     ollama_service: OllamaService,
 ) -> None:
     selected_sections = pick_sections(sections)
@@ -341,17 +321,14 @@ def interactive_menu(
         return
 
     model_specs = sorted(config["models"], key=lambda m: m.get("released", ""), reverse=True)
-    choices = [str(i) for i in range(1, len(model_specs) + 1)] + ["a", "m", "q"]
+    choices = [str(i) for i in range(1, len(model_specs) + 1)] + ["a", "q"]
     while True:
         console.print(build_menu_table(model_specs))
-        console.print("[bold]a[/] run ALL   [bold]m[/] metastudy only   [bold]q[/] quit")
-        choice = Prompt.ask("Pick a model number, a, m, or q", choices=choices, show_choices=False)
+        console.print("[bold]a[/] run ALL   [bold]q[/] quit")
+        choice = Prompt.ask("Pick a model number, a, or q", choices=choices, show_choices=False)
 
         if choice == "q":
             return
-        if choice == "m":
-            run_metastudy_step(run_dir, synthesis_model, synthesis_price)
-            continue
         if choice == "a":
             for spec in model_specs:
                 run_one(spec, run_dir, system_prompt, selected_sections, shas, ollama_service)
@@ -367,7 +344,6 @@ def main() -> None:
     parser.add_argument("--only", choices=["anthropic", "ollama"], default=None)
     parser.add_argument("--models", default=None, help="Comma-separated labels from models.yaml to run, e.g. --models haiku-4-5")
     parser.add_argument("--all", action="store_true", help="Run every configured model, non-interactively")
-    parser.add_argument("--skip-metastudy", action="store_true")
     args = parser.parse_args()
 
     config = yaml.safe_load(MODELS_CONFIG_PATH.read_text())
@@ -390,10 +366,6 @@ def main() -> None:
     total_questions = sum(len(qs) for _, qs in sections)
     log.info(f"Loaded {len(sections)} sections ({total_questions} questions) from instructions.md")
 
-    synthesis_model = config["synthesis"]["model"]
-    synthesis_spec = next((m for m in config["models"] if m["model"] == synthesis_model), {})
-    synthesis_price = (synthesis_spec.get("price_in"), synthesis_spec.get("price_out"))
-
     batch_requested = bool(args.only or args.models or args.all)
     interactive = not batch_requested and sys.stdin.isatty()
     if not interactive and not batch_requested:
@@ -402,12 +374,10 @@ def main() -> None:
     ollama_service = OllamaService()
     try:
         if interactive:
-            interactive_menu(config, run_dir, system_prompt, sections, shas, synthesis_model, synthesis_price, ollama_service)
+            interactive_menu(config, run_dir, system_prompt, sections, shas, ollama_service)
         else:
             for spec in model_specs:
                 run_one(spec, run_dir, system_prompt, sections, shas, ollama_service)
-            if not args.skip_metastudy:
-                run_metastudy_step(run_dir, synthesis_model, synthesis_price)
     except KeyboardInterrupt:
         log.warning("Interrupted.")
     finally:

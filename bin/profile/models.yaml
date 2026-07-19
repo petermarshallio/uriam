@@ -12,10 +12,6 @@
 # are approximate -- derived from "N weeks/months ago" on ollama.com/search
 # at the time they were added, not an exact release date.
 
-synthesis:
-  provider: anthropic
-  model: claude-opus-4-8
-
 models:
   - provider: anthropic
     model: claude-fable-5
@@ -63,9 +59,8 @@ models:
     price_in: 15.00
     price_out: 75.00
 
-  # Ollama spread, oldest -> newest, so the metastudy can talk about
-  # progression over time rather than just across vendors. Free -- no
-  # pricing fields.
+  # Ollama spread, oldest -> newest, for progression-over-time comparisons
+  # rather than just across vendors. Free -- no pricing fields.
   - provider: ollama
     model: "tinyllama"
     label: tinyllama-2023 # deliberately weak floor, 1.1B -- not expected to
