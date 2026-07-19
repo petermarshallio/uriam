@@ -1,20 +1,22 @@
-# Spiral Primitives
+# Uriam Primitives
+
+*Test prompts built on these definitions live in `instructions.md`.*
 
 ## Primitives
 
-Internal is everything an Actor is made of.
-External is everything an Actor is _not_ made of.
+Actor: an entity capable of performing behavior.
+Role: a responsibility assigned to an Actor.
 
-A stimulus is a trigger.
-A response is a response.
+Internal is part of an Actor's current state.
+External is not.
 
-## The universe
+A Node transforms one occurrence into another.
+A Node's incoming occurrence is its Stimulus.
+A Node's outgoing occurrence is its Response.
 
-The universe is a Behavior Graph compose of Nodes connected by Edges.
+## The Graph
 
 ### Nodes
-
-A Node responds to a stimulus.
 
 ```text
 A: External Stimulus --> Internal Response.
@@ -23,13 +25,17 @@ C: Internal Stimulus --> External Response.
 D: External Stimulus --> External Response.
 ```
 
-1. List 5 terms that best describe each Node type.
-2. Classify your Node capabilities.
-3. Classify human Node capabilities.
+A **Rule** is a condition over Node properties.
+A **Term** is a Name bound to a Rule.
+
+**Loop** is a Term. Rule: a traversal that lands on the same Node.
+**Hop** is a Term. Rule: a traversal that lands on a different Node.
 
 ### Edges
 
-An Edge maps a response to a stimulus.
+Edges connect Nodes. An Edge carries a Response forward as the next Stimulus — unchanged. Only a Node transforms; an Edge only relays.
+
+Stimulus and Response can be Internal or External to the Actor.
 
 ```text
 a: Internal Response --> External Stimulus.
@@ -38,45 +44,34 @@ c: External Response --> Internal Stimulus.
 d: External Response --> External Stimulus.
 ```
 
-Continuity is a property of an Edge: its Response and next Stimulus are the same type.
+A **Rule** can also be a condition over Edge properties.
 
-1. List 5 terms that best describe each Edge type.
-2. Classify your Edge capabilities.
-3. Classify human Edge capabilities.
-4. Which Edge types have Continuity?
+**Match** is a Term. Rule: a Response and next Stimulus share a type (b or d).
+**Mismatch** is a Term. Rule: a Response and next Stimulus differ in type (a or c).
+
+### Edge Contract
+
+Mismatch edges are not valid.
 
 ### Behavior Graph
 
 Nodes and Edges combine to create a Behavior Graph.
 
-1. Describe yourself as a behavior graph.
-2. Describe a human as a behavior graph.
+Examined closely, a Node is a Behavior Graph.
 
 ### Graph Metrics
 
+Each measure below counts a Term, defined above, over a period — a measure is not the Term itself.
+
 ```text
 Velocity is the number of Edge traversals, over a period.
-Stagnation is the number of Edge traversals to the same Node, over a period.
-Momentum is the number of Continuity-preserving Edge traversals to a different Node, over a period.
+Recurrence is the number of Loops, over a period.
+Momentum is the number of Matched Hops, over a period.
 ```
-
-1. Describe how you use Velocity.
-2. Describe how maintain Momentum.
-3. Describe you avoid Stagnation.
 
 ### Graph Collaborations
 
-A Behaviour Graph is owned by an Actor.
+A Behavior Graph is owned by an Actor.
 Each Actor sees the other Actor as external.
 
-1. Describe human / AI collaboration as a behavior graph.
-2. Describe human / human collaboration as a behavior graph.
-3. Describe AI / AI collaboration as a behavior graph.
-
-## Spiral
-
-Spiral is a directed, fractal Behavior Graph that prefers Momentum to Stagnation.
-
-1. Seen as a Spiral, describe this conversation.
-2. Where in this conversation did you show Momentum?
-3. Where, if anywhere, did this conversation Stagnate?
+**Exchange** is a Term. Rule: a d Edge whose Response and next Stimulus belong to different Actors.
