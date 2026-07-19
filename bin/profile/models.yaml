@@ -18,6 +18,14 @@ synthesis:
 
 models:
   - provider: anthropic
+    model: claude-fable-5
+    label: fable-5 # Anthropic's actual top-of-line release this generation --
+                    # not an "Opus 5", which doesn't exist; Opus stayed on the
+                    # 4.x line while Sonnet and this one jumped to 5.
+    released: "2026-06"
+    price_in: 10.00
+    price_out: 50.00
+  - provider: anthropic
     model: claude-opus-4-8
     label: opus-4-8
     released: "2026-05"
