@@ -14,8 +14,8 @@ Within the graph:
 
 Measures include:
 
-* **Repetitions**: the number of Loops over a period.
-* **Velocity**: the number of Hops over a period.
+* **Repetitions**: the number of Loops.
+* **Velocity**: the number of Hops.
 
 ## Information Graph
 
@@ -65,4 +65,4 @@ Examined closely, a Node is a URIAm Graph.
 
 Measures include:
 
-* **Momentum**: the number of Adjacent Hops over a period.
+* **Momentum**: the number of Adjacent Hops.
