@@ -1,9 +1,71 @@
 # Uriam model profiling
 
-Runs `primitives.md` + `instructions.md` against a spread of LLMs (current and
-legacy Anthropic models, plus a handful of Ollama models spanning 2023-2024)
-to see (a) whether `primitives.md` is an unambiguous specification, and (b)
-how differently models actually understand it.
+This harness runs `primitives.md` + `instructions.md` against a spread of
+LLMs -- current and legacy Anthropic models, plus Ollama models spanning
+2023-2026 -- and serves two purposes at once:
+
+1. **Testing the specification itself.** `primitives.md` is deliberately
+   abstract and name-blind (see `../../origin.md`) -- it never tells a model
+   the framework is called Uriam, or that its A/B/C/D placeholders map onto
+   real stage names. Where several models independently converge on a wrong
+   or inconsistent reading of the same question, that's signal the
+   *definition* needs work, not that the models are bad at it. Findings here
+   are meant to feed back into `primitives.md` and `instructions.md`
+   directly -- this is a source of edits, not just a report about models.
+
+2. **Testing what a model makes of itself through Uriam's own vocabulary.**
+   The Self-Reflection section asks each model to describe itself, and the
+   conversation it just had, as a Behavior Graph -- using only the primitives
+   it was given, nothing else. That's not a comprehension quiz. Per
+   `origin.md`'s account of why the framework is named Uriam at all ("Who U R
+   and what I Am"), this is closer to mutual recognition than classification:
+   given nothing but the abstract primitives, does a model arrive at
+   something coherent about its own nature?
+
+## Quick start
+
+**Prerequisites:**
+
+- Python 3.9+
+- [Ollama](https://ollama.com/download) (or `brew install ollama`) -- only needed for the local models; skip if you're only running Anthropic ones
+- An Anthropic API key -- only needed for the Anthropic models; skip if you're only running Ollama ones
+
+**Setup (once):**
+
+```sh
+cd bin/profile
+./setup.sh
+```
+
+Creates a virtualenv, installs Python dependencies, and prompts for your
+`ANTHROPIC_API_KEY` (saved to a gitignored `.env`). If `ollama` is already on
+your PATH, it also pulls every model listed in `models.yaml`.
+
+**Run:**
+
+```sh
+source .venv/bin/activate
+python run.py
+```
+
+That's the whole entrypoint -- there's no separate `run.sh`. With no flags,
+`run.py` opens an interactive menu: every configured model, newest release
+first, pick a number to run it (repeat as many times as you like), `a` to run
+everything, `m` to build the cross-model metastudy from whatever's already
+run, `x` to quit.
+
+**What it produces**, under `bin/profile/YYYYMMDD/` (today's date):
+
+- One self-contained folder per model run (`<provider>__<label>/`) --
+  its own `manifest.json` (status, token usage, cost, git sha of the test
+  material) plus one `.md` file per `instructions.md` section (or `ERROR.md`
+  if that model's run failed)
+- `metastudy.md` -- the cross-model synthesis, once you've built it
+
+Ollama itself is managed for you -- `run.py` starts the local service the
+first time it's actually needed, and shuts down only the instance *it*
+started, on quit (`x`) or Ctrl-C. You never need `ollama serve` running
+yourself.
 
 ## Design principle: no behavior-shaping instructions
 
@@ -41,32 +103,36 @@ re-transmitted fewer times, which is most of what the per-model cost is.
 
 ```
 primitives.md, instructions.md   the test material (edited independently of this harness)
-models.yaml                      which models to run, and their live-verified pricing -- edit freely
+models.yaml                      which models to run, their release date, and live-verified pricing -- edit freely
 requirements.txt, setup.sh       one-time environment setup
 run.py                           orchestrates a run -- interactive menu by default
 lib/providers.py                 Anthropic + Ollama chat clients, one interface
 lib/ollama_service.py            starts/stops the local Ollama service on demand
 lib/pricing.py                   token usage -> USD, from models.yaml's pricing fields
 lib/metastudy.py                 builds the cross-model synthesis report
-YYYYMMDD/                        one folder per run
-  manifest.json                    which models ran, cost, token usage, git sha of the test material
-  transcripts/<provider>__<label>__<NN>-<section-slug>.md   one file per section per model
-  transcripts/<provider>__<label>__ERROR.md                 written instead, if that model's run failed
+YYYYMMDD/                        one folder per run date
+  <provider>__<label>/             one self-contained folder per model run
+    manifest.json                    status, token usage, cost, git sha of the test material
+    <NN>-<section-slug>.md           one file per instructions.md section
+    ERROR.md                         written instead of the above, if that model's run failed
   metastudy.md                     cross-model synthesis (skip with --skip-metastudy)
 ```
 
-## Running it
+## The interactive menu
+
+`python run.py` with no flags lists every model in `models.yaml`, sorted
+newest-release-first (see `models.yaml`'s `released: YYYY-MM` field), and
+lets you run one at a time, or `a` for all. It's deliberately a plain picker,
+not a status dashboard -- it doesn't show cost or pass/fail there. That
+detail lives where it belongs: a `[green]done[/]`/`[red]FAILED[/]` line in
+the console log as each model finishes (with its cost, for Anthropic models),
+and permanently in that model's own `manifest.json`.
+
+Non-interactive flags exist for scripting:
 
 ```sh
-./setup.sh                          # venv, deps, .env, pull Ollama models
-source .venv/bin/activate
-python run.py                       # interactive menu: pick a model, run it, repeat
 python run.py --all                 # every model in models.yaml, no menu
 python run.py --only anthropic      # skip Ollama
 python run.py --models haiku-4-5    # just one model, by its models.yaml label
 python run.py --skip-metastudy      # collect transcripts, skip the synthesis call
 ```
-
-Ollama is managed for you -- `run.py` starts the local service the first time
-it's actually needed and shuts down only the instance it started, on quit
-('x') or Ctrl-C. You don't need `ollama serve` running yourself.
