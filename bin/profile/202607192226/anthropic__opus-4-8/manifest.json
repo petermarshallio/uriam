@@ -1,0 +1,27 @@
+{
+  "run_id": "202607192226",
+  "provider": "anthropic",
+  "model": "claude-opus-4-8",
+  "label": "opus-4-8",
+  "primitives_sha": "de417321f45c5c7844c1756e0b234f25765d53b3",
+  "instructions_sha": "53a3fdd6b1a627605a8d647a257586d52f9b6509",
+  "status": "ok",
+  "input_tokens": 106401,
+  "output_tokens": 20297,
+  "cost_usd": 1.0394299999999999,
+  "elapsed_seconds": 349.1521905700001,
+  "avg_tokens_per_second": 58.13224303953132,
+  "files": [
+    "01-nodes.md",
+    "02-edges.md",
+    "03-state.md",
+    "04-actors-roles.md",
+    "05-uriam-graph.md",
+    "06-graph-metrics.md",
+    "07-graph-collaborations.md",
+    "08-self-reflection.md",
+    "09-ai-self-model.md",
+    "10-feedback.md"
+  ],
+  "updated_at": "2026-07-19T21:32:18.430928+00:00"
+}
