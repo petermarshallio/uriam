@@ -1,77 +1,68 @@
-# Uriam Primitives
+# Primitives
 
-*Test prompts built on these definitions live in `instructions.md`.*
+## Graphs
 
-## Primitives
+A graph models relationships between objects.
 
-Actor: an entity capable of performing behavior.
-Role: a responsibility assigned to an Actor.
+* **Nodes** describe behavior. They are active: they do work.
+* **Edges** are relationships between Nodes. They are passive: they do no work.
 
-Internal is part of an Actor's current state.
-External is not.
+Within the graph:
 
-A Node transforms one occurrence into another.
-A Node's incoming occurrence is its Stimulus.
-A Node's outgoing occurrence is its Response.
+* A **Loop** is a relationship that connects a Node back to itself.
+* A **Hop** is a relationship between one Node and another Node.
 
-## The Graph
+Measures include:
 
-### Nodes
+* **Repetitions**: the number of Loops over a period.
+* **Velocity**: the number of Hops over a period.
 
-```text
-A: External Stimulus --> Internal Response.
-B: Internal Stimulus --> Internal Response.
-C: Internal Stimulus --> External Response.
-D: External Stimulus --> External Response.
-```
+## Information Graph
 
-A **Rule** is a condition over Node properties.
-A **Term** is a Name bound to a Rule.
+An Information Graph extends a simple Graph to model behavior that concerns information:
 
-**Loop** is a Term. Rule: a traversal that lands on the same Node.
-**Hop** is a Term. Rule: a traversal that lands on a different Node.
+* **Information** is a representation of something in the observable universe.
 
-### Edges
+This means that:
 
-Edges connect Nodes. An Edge carries a Response forward as the next Stimulus — unchanged. Only a Node transforms; an Edge only relays.
+* **Nodes** exhibit behavior where incoming Information is a Stimulus and outgoing Information is a Response.
+* **Edges** relate Nodes that are Information-compatible, and are directional: a Response only ever becomes the next Stimulus, never the reverse.
 
-Stimulus and Response can be Internal or External to the Actor.
+## URIAm Graph
 
-```text
-a: Internal Response --> External Stimulus.
-b: Internal Response --> Internal Stimulus.
-c: External Response --> Internal Stimulus.
-d: External Response --> External Stimulus.
-```
+A URIAm Graph is an Information Graph that concerns information exchange:
 
-A **Rule** can also be a condition over Edge properties.
+* **Actor**: an entity capable of performing Behavior - self or other.
+* **Role**: a responsibility assigned to an Actor.
+* A Role is assigned to a Node — the specific Behavior it's responsible for performing.
 
-**Match** is a Term. Rule: a Response and next Stimulus share a type (b or d).
-**Mismatch** is a Term. Rule: a Response and next Stimulus differ in type (a or c).
+This means that:
 
-### Edge Contract
-
-Mismatch edges are not valid.
-
-### Behavior Graph
-
-Nodes and Edges combine to create a Behavior Graph.
-
-Examined closely, a Node is a Behavior Graph.
-
-### Graph Metrics
-
-Each measure below counts a Term, defined above, over a period — a measure is not the Term itself.
+* **Information** gains perspective based on ownership: Internal is owned by self, External is not.
+* **Nodes** split into four types depending on source and destination information ownership.
 
 ```text
-Velocity is the number of Edge traversals, over a period.
-Recurrence is the number of Loops, over a period.
-Momentum is the number of Matched Hops, over a period.
+A: External Information Stimulus --> Internal Information Response.
+B: Internal Information Stimulus --> Internal Information Response.
+C: Internal Information Stimulus --> External Information Response.
+D: External Information Stimulus --> External Information Response.
 ```
 
-### Graph Collaborations
+The four Node types form one cycle: A → B → C → D → A. This order is stipulated, not derived from type alone — Stimulus type alone doesn't force it, since B and C both take Internal Stimulus, and A and D both take External Stimulus.
 
-A Behavior Graph is owned by an Actor.
-Each Actor sees the other Actor as external.
+**Adjacent** is a Term. Rule: a Hop that follows the cycle (A→B, B→C, C→D, or D→A).
 
-**Exchange** is a Term. Rule: a d Edge whose Response and next Stimulus belong to different Actors.
+* **Edges** become one of two types:
+
+```text
+a: Internal Information Response --> Internal Information Stimulus.
+b: External Information Response --> External Information Stimulus.
+```
+
+A b-type Edge is an **Exchange** when the Nodes are assigned to different Actors.
+
+Examined closely, a Node is a URIAm Graph.
+
+Measures include:
+
+* **Momentum**: the number of Adjacent Hops over a period.

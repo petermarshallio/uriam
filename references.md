@@ -67,6 +67,15 @@ For how each concept is actually defined, see `reference.md`. This file only ans
 
 ---
 
+## State, Ownership, and Activation
+
+| Source | What it is | What Uriam draws from it | Used in |
+| --- | --- | --- | --- |
+| **Denning's Working Set Model** (Peter Denning, 1968) | Memory-management model distinguishing a process's full address space from the pages actively resident in memory | Grounds the distinction between Information an Actor owns (Internal) and the subset a Node currently engages with (its working set) — recalling something already owned isn't new Information arriving, just a change in what's active | `fundamentals.md` (Internal/External) |
+| **Johari's Window** (Luft & Ingham, 1955) | Psychological model crossing self-knowledge against other-knowledge into four quadrants (Open, Hidden, Blind Spot, Unknown) | Independently confirms the same two-axis shape — ownership crossed with activation/visibility — for the two-Actor case: disclosure and feedback are Exchanges moving Information between quadrants, in each direction | `fundamentals.md` (Internal/External); design discussion behind the Information/Internal/External primitive, 2026-07-19 |
+
+---
+
 ## Named Techniques (Repertoire Technique Tables)
 
 Every row in `reference.md`'s four "Techniques Each Character Draws On" tables cites a specific, named real-world source. Listed here by character; full fit-rationale is in `reference.md`, not repeated here.

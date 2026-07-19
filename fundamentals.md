@@ -8,7 +8,9 @@
 
 **Role** — a responsibility an Actor takes on, not a fixed identity. You play a lot of roles, depending on which quadrant you're in: something like a student while Internalising, a detective while Examining, a maker while Externalising, and so on — more on the specific ones people (and this document) reach for most often in [`analogy-production.md`](./analogy-production.md). Nothing here requires those particular names; they're one illustration, not the only one.
 
-**Internal / External** — not a property of a medium or a body part, but of whose current state is doing the sourcing or receiving, for whichever Actor you're tracing. A machine's own memory is genuinely internal to that machine, even though nothing resembling human comprehension occurs there. A sensor reading sitting in a file nobody consults is external on both ends; the same reading entering a system's own long-term memory is external-to-internal, for that system, because the memory is genuinely its interior.
+**Internal / External** — a question of ownership, not of medium or body part: Information an Actor owns is Internal to it; Information it doesn't own is External. A machine's own memory is genuinely internal to that machine, even though nothing resembling human comprehension occurs there. A sensor reading sitting in a file nobody consults is external on both ends; the same reading entering a system's own long-term memory is external-to-internal, for that system, because the memory is genuinely its interior.
+
+Recalling something you already knew doesn't count as new Information arriving — a memory, a fact you'd filed away, was always yours, just not active a moment ago. What's actively engaged right now versus what's owned but dormant is a real distinction, borrowed from computer science's own notion of a working set (see `references.md`) — but it's a separate question from Internal/External, not a redefinition of it. Ownership doesn't move when something merely comes back into view.
 
 **A Node** transforms one occurrence into another — an incoming Stimulus becomes an outgoing Response.
 
