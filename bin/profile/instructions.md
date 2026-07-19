@@ -46,7 +46,7 @@ The first four sections (Nodes, Edges, State, Actors & Roles) check whether a mo
 
 1. Describe how you use Velocity.
 2. Describe how you maintain Momentum.
-3. Describe when high Recurrence would be a problem, and when it wouldn't.
+3. Describe when a high number of Repetitions would be a problem, and when it wouldn't.
 
 ## Graph Collaborations
 
@@ -58,7 +58,7 @@ The first four sections (Nodes, Edges, State, Actors & Roles) check whether a mo
 
 1. Seen as a Uriam Graph, describe this conversation.
 2. Where in this conversation did you show Momentum?
-3. Where, if anywhere, did this conversation show high Recurrence — and was it a problem?
+3. Where, if anywhere, did this conversation show a high number of Repetitions — and was it a problem?
 4. Where in this conversation did an Exchange occur, and between which two Actors?
 
 ## AI Self-Model

@@ -24,7 +24,7 @@ Worth being honest about the limits of the image, same as any analogy:
 
 - **Good for:** momentum (climbing = progress), the fractal property (a staircase inside a staircase), and the discipline of a fixed shape repeating — the same four moves, not a different four each time.
 - **Weak for:** anything relational — two people, or a person and an AI, moving through their own cycles at once. A spiral doesn't have a natural vocabulary for how two independent climbs relate to each other. (See `analogy-production.md`'s musical framing — unison, dissonance, counterpoint, suspension — for that instead.)
-- **Not required at all.** Uriam's actual fundamentals live in [`bin/profile/primitives.md`](./bin/profile/primitives.md) and reference no image whatsoever — Actor, Role, Node, Edge, Behavior Graph. The spiral is one way of picturing the cycle for a reader who finds a physical shape easier to hold onto than pure structure. Use it if it helps. Drop it if it doesn't.
+- **Not required at all.** Uriam's actual fundamentals live in [`bin/profile/primitives.md`](./bin/profile/primitives.md) and reference no image whatsoever — Actor, Role, Node, Edge, Uriam Graph. The spiral is one way of picturing the cycle for a reader who finds a physical shape easier to hold onto than pure structure. Use it if it helps. Drop it if it doesn't.
 
 ---
 

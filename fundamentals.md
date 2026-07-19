@@ -12,11 +12,13 @@
 
 Recalling something you already knew doesn't count as new Information arriving — a memory, a fact you'd filed away, was always yours, just not active a moment ago. What's actively engaged right now versus what's owned but dormant is a real distinction, borrowed from computer science's own notion of a working set (see `references.md`) — but it's a separate question from Internal/External, not a redefinition of it. Ownership doesn't move when something merely comes back into view.
 
-**A Node** transforms one occurrence into another — an incoming Stimulus becomes an outgoing Response.
+**Information** — a representation of something in the observable universe. What flows into a Node as a Stimulus, and back out as a Response.
+
+**A Node** transforms one piece of Information into another — an incoming Stimulus becomes an outgoing Response.
 
 ## The Graph
 
-Nodes and Edges combine to form a Behavior Graph — the shape an Actor's behavior actually takes, moment to moment.
+Nodes and Edges combine to form a Uriam Graph — the shape an Actor's behavior actually takes, moment to moment.
 
 ### The Four Nodes
 
@@ -36,34 +38,39 @@ A traversal that lands back on the same Node is a **Loop**. One that lands on a 
 
 ### Edges
 
-An Edge connects one Node's Response to the next Node's Stimulus, carrying it forward unchanged. Only a Node transforms Internal into External or back again; an Edge just relays.
+An Edge connects one Node's Response to the next Node's Stimulus, carrying it forward unchanged, and only in one direction — a Response only ever becomes the next Stimulus, never the reverse. Only a Node transforms Internal into External or back again; an Edge just relays.
 
-That gives Edges a type too, depending on whether the Response's Internal/External-ness survives the handoff:
+That gives Edges exactly two types, depending on which side of Internal/External the Response and next Stimulus sit on: Internal handed to Internal, or External handed to External. There's no third kind. A single Edge can never carry an Internal Response into an External Stimulus, or back again — that crossing needs a Node in between to actually do the work.
 
-- **Match** — the Response and the next Stimulus share a type. This is what a normal traversal looks like.
-- **Mismatch** — they differ. Internal becomes External, or vice versa, with no Node in between to actually do that work.
+One structural consequence worth knowing: Internalising and Externalising can never Loop directly onto themselves — doing so would require exactly the Internal↔External crossing an Edge can't make. Only Examining and Interacting can.
 
 ### The Edge Contract
 
-Mismatch edges are not valid — they can't actually be traversed. An Edge that claimed to turn an Internal Response into an External Stimulus, with nothing in between, would be doing a Node's job without being one: quietly performing the exact transformation this whole model exists to make visible. Every name this framework has ever given its fourth stage before "Interacting" — Do, Creating, Create, Build — turned out to fail for a version of this same reason (the full history is in `origin.md`). If it looks like a Mismatch happened, look again: something upstream did the actual converting, and got mislabeled as a relay instead of a Node.
+An Edge that claimed to turn an Internal Response into an External Stimulus, with nothing in between, would be doing a Node's job without being one: quietly performing the exact transformation this whole model exists to make visible. Every name this framework has ever given its fourth stage before "Interacting" — Do, Creating, Create, Build — turned out to fail for a version of this same reason (the full history is in `origin.md`). If it looks like an Edge just did that crossing, look again: something upstream did the actual converting, and got mislabeled as a relay instead of a Node.
 
-### The Behavior Graph, and the Fractal Property
+### The Cycle, and Adjacent
 
-Examined closely, a single Node is itself a full Behavior Graph — a smaller Internalising→Examining→Externalising→Interacting cycle, one level down. The Internalising stage of a project *is* its own complete cycle: you interact with small experiments, internalise what they teach you, examine what you found, and externalise the next experiment. This is structurally true at any granularity, not a metaphor — the same four questions apply whether you're looking at five minutes or five years.
+The four Nodes fall into one order — Internalising → Examining → Externalising → Interacting → Internalising — and this has to be stated as its own fact, not derived from the Node types alone: Examining and Externalising both start from an Internal Stimulus, and Internalising and Interacting both start from an External one, so a Node's Stimulus type alone never tells you which Node comes next.
+
+A Hop that follows this stated order is **Adjacent**. Not every valid Hop is Adjacent — a Response can validly reach a Node other than the next one in the cycle (Internalising can hand straight to Externalising, skipping Examining entirely, and the Edge carrying it is still perfectly valid) — but only the Hops that follow the stated order count toward Momentum, below.
+
+### The Uriam Graph, and the Fractal Property
+
+Examined closely, a single Node is itself a full Uriam Graph — a smaller Internalising→Examining→Externalising→Interacting cycle, one level down. The Internalising stage of a project *is* its own complete cycle: you interact with small experiments, internalise what they teach you, examine what you found, and externalise the next experiment. This is structurally true at any granularity, not a metaphor — the same four questions apply whether you're looking at five minutes or five years.
 
 ### Graph Metrics
 
-Each of these counts something, over a period — the measure isn't the thing itself.
+Each of these is a plain count — no time window built in, and no judgment about quality. Whether a given Loop was worthwhile, or a Response was actually true, isn't something these measures decide.
 
-- **Velocity** — the number of Edge traversals. Says nothing about which ones; churn and genuine progress both register.
-- **Recurrence** — the number of Loops. High Recurrence usually means **Stagnation** — spending Velocity without ever leaving a Node — though not always: a deliberately slow, contemplative pace looks the same from the outside and isn't a malfunction.
-- **Momentum** — the number of Matched Hops. The closest thing to "real progress": movement to a genuinely different Node, carried by a Response the next Node can actually use.
+- **Velocity** — the number of Hops. Says nothing about which ones; churn and genuine progress both register.
+- **Repetitions** — the number of Loops.
+- **Momentum** — the number of Adjacent Hops: movement that follows the stated cycle, not just movement to somewhere different.
 
 ### Graph Collaborations
 
-A Behavior Graph is owned by an Actor. Each Actor sees every other Actor as external to itself — including another instance of the same underlying system.
+A Uriam Graph is owned by an Actor. Each Actor sees every other Actor as external to itself — including another instance of the same underlying system.
 
-**Exchange** — a d-type edge (External→External) whose Response and next Stimulus belong to two *different* Actors. This is what collaboration actually is, structurally: one Actor's Interacting-stage output becoming another Actor's Internalising-stage input. A human reading an AI's answer is an Exchange. An AI reading a human's question is the same Exchange, run the other way. Two AI systems handing work back and forth are doing the same thing a human team does — Exchange doesn't care which side of it is a person.
+**Exchange** — an External-to-External Edge whose Response and next Stimulus belong to two *different* Actors. Only External-to-External Edges can ever cross an Actor boundary this way — Internal Information belongs to whoever owns it, by definition, so it can never be handed directly to another Actor's Internal. This is what collaboration actually is, structurally: one Actor's Interacting-stage output becoming another Actor's Internalising-stage input. A human reading an AI's answer is an Exchange. An AI reading a human's question is the same Exchange, run the other way. Two AI systems handing work back and forth are doing the same thing a human team does — Exchange doesn't care which side of it is a person.
 
 Knowledge in play at any Node also has a **reach** — how far it extends beyond the Actor doing the work: from what's true industry-wide (World), down to what's specific to this one exchange (Self), with Enterprise, Division, and Team in between. The richest thinking pulls on more than one reach level at once — Self knowledge without World knowledge is parochial; World knowledge without Self knowledge is generic.
 

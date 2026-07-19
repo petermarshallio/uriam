@@ -2,13 +2,13 @@
 
 **A model of how any Actor — human or machine — moves from raw input to meaningful output.**
 
-Built from a small set of primitives — Actor, Role, Node, Edge — that combine into a Behavior Graph. Any two Actors that share this model can examine their own behavior with it, or work together.
+Built from a small set of primitives — Actor, Role, Node, Edge — that combine into a Uriam Graph. Any two Actors that share this model can examine their own behavior with it, or work together.
 
 ## What's in this repo
 
 | File | Purpose |
 | --- | --- |
-| [`bin/profile/primitives.md`](./bin/profile/primitives.md) | The fundamentals, formally — Actor, Role, Node, Edge, Behavior Graph. Everything else is built on this. |
+| [`bin/profile/primitives.md`](./bin/profile/primitives.md) | The fundamentals, formally — Actor, Role, Node, Edge, Uriam Graph. Everything else is built on this. |
 | [`fundamentals.md`](./fundamentals.md) | The same fundamentals, in plain English — why the framework works |
 | [`reference.md`](./reference.md) | Strict definitions and lookup tables |
 | [`references.md`](./references.md) | External sources the framework draws on |

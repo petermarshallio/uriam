@@ -8,12 +8,19 @@ Two tiers below. **Core Concepts** are facts — what a term *is*, no rationale 
 
 ## Core Concepts
 
-- **Internal / External** — not a property of a medium or a body part, but of whose current state is the source or target of an act, relative to whichever Actor is the subject of the cycle in question. A store counts as internal to an Actor if it's part of that Actor's own persistent state — memory, understanding, model weights — regardless of whether the Actor is human or a mechanism, and regardless of whether anything resembling human comprehension occurs. A sensor's reading sitting in a file nobody consults is external-to-external; the same reading entering a system's own long-term memory is external-to-internal, for that system, because the memory is genuinely its interior.
+- **Node** — describes behavior. Active: it does work.
+- **Edge** — a relationship between Nodes. Passive: it does no work.
+- **Loop** — an Edge connecting a Node back to itself.
+- **Hop** — an Edge connecting one Node to a different Node.
+- **Information** — a representation of something in the observable universe. What a Node takes in as Stimulus and puts out as Response.
+- **Internal / External** — not a property of a medium or a body part, but of ownership: Information owned by an Actor is Internal to it; Information it doesn't own is External. Ownership doesn't move when dormant Information merely comes back into view — recalling something you already knew isn't new Information arriving. A store counts as internal to an Actor if it's part of that Actor's own persistent state — memory, understanding, model weights — regardless of whether the Actor is human or a mechanism, and regardless of whether anything resembling human comprehension occurs. A sensor's reading sitting in a file nobody consults is external to everyone; the same reading entering a system's own long-term memory is Internal, for that system, because the memory is genuinely its interior.
 - **Internalising** — External source → internal target. Something outside becomes part of what you know.
 - **Examining** — Internal source → internal target. Working on what you already have; nothing new enters, nothing yet leaves.
 - **Externalising** — Internal source → external target. Internal reasoning made legible to someone or something outside yourself.
 - **Interacting** — External source → external target. Acting on the world; the world responds; something new exists that didn't before.
 - **The Matrix** — The 2×2 grid of source (where input comes from) × target (where output goes) that the four stages derive from.
+- **The Cycle** — The four stages' one stipulated order: Internalising → Examining → Externalising → Interacting → Internalising. Stated as its own fact, not derived from the Matrix alone — Examining and Externalising both start from an internal source, and Internalising and Interacting both start from an external one, so source type alone never determines which stage comes next.
+- **Adjacent** — A Hop that follows the Cycle. Not every valid Hop is Adjacent — a Response can validly reach a stage other than the next one in the Cycle (Internalising can hand straight to Externalising, skipping Examining, on a perfectly valid transition) — but only Adjacent Hops count toward Momentum.
 - **Actor** — A person or an AI system: whatever is capable of being assigned to a Role (from ArchiMate's Business Actor).
 - **Role** — A named, illustrative way of doing an Actor's work — the Student, Johnny 5, the Philosopher, Hercule Poirot, the Maker, Leonardo da Vinci, the Witness, Snoopy, and others. Held by an Actor, drawn from its Repertoire. A Role's fit to a given Node is a matter of degree, chosen for the moment, not a fixed assignment — the same way a technique is chosen from a menu rather than mandated by the stage. One Actor can be assigned several Roles, including more than one within a single exchange (from ArchiMate's Business Role).
 - **The Repertoire** — The full set of Roles available to a single Actor. Not partitioned one-per-Node: each Node has a whole group of Roles that tend to fit it well, each bringing its own register, and a Role can belong to more than one Node's group. Not several distinct performers, either — one Actor, drawing on whichever Role, from whichever group, best fits the Node it's currently occupying. Supersedes "the Cast," which implied both several distinct performers and exactly one fixed Role per stage — the Cast does not survive the Uriam reframe; the Repertoire replaces it.
@@ -27,11 +34,11 @@ Two tiers below. **Core Concepts** are facts — what a term *is*, no rationale 
 - **Collaboration** — The set of Actors currently assigned to Roles for a given cycle (from ArchiMate's Business Collaboration: two or more roles working together).
 - **Interaction** — A full cycle, start to finish, performed jointly by a Collaboration (from ArchiMate's Business Interaction: the collective behaviour a Collaboration performs). Every cue's Notes is a smaller Interaction nested inside it — the Fractal Property, one level down.
 - **Ceremony** — Informal name for an Interaction in progress. Unlike Scrum's ceremonies, never schedule-bound: a Ceremony convenes when the work is ready, not on a clock.
-- **Hero** — Not a Role with content of its own, the way the Repertoire's Roles are. A plain, deictic label for whichever Actor currently owns the Behavior Graph in play — "you're the Hero here" just means "this is your cycle." Already implied by primitives.md's "a Behavior Graph is owned by an Actor"; Hero names that fact for a reader rather than adding a new one.
-- **Velocity** — The raw rate at which an Actor moves through transitions. Says nothing about which ones — churn and genuine progress both register.
-- **Continuity** — A transition preserves Continuity when the completing stage's target and the next stage's source share the same type (Internal→Internal, External→External) — what was produced is genuinely what the next stage draws on, not swapped for something else mid-transit.
-- **Momentum** — Velocity counted only across transitions that preserve Continuity and don't return to the same stage: the rate of genuine progress round the cycle, not just activity. High: each revolution lands somewhere new. False: high Velocity that isn't Momentum — activity that breaks Continuity or returns to the same stage, without advancing.
-- **Stagnation** — Zero Momentum from returning to the same stage: the same stage recurring, regardless of how much Velocity is spent inside it.
+- **Hero** — Not a Role with content of its own, the way the Repertoire's Roles are. A plain, deictic label for whichever Actor currently owns the Uriam Graph in play — "you're the Hero here" just means "this is your cycle." Already implied by primitives.md's "a Uriam Graph is owned by an Actor"; Hero names that fact for a reader rather than adding a new one.
+- **Velocity** — The number of Hops. Says nothing about which ones — churn and genuine progress both register the same.
+- **Repetitions** — The number of Loops.
+- **Momentum** — The number of Adjacent Hops: movement that follows the Cycle, not just movement to somewhere different. High: each revolution lands on the next stage in order.
+- **A note on quality** — Uriam's measures don't concern the quality of Information or of a stage's own behavior. Whether a given Loop was worthwhile deliberation or stuck rumination, or a Response was honest but not true, are real distinctions — just not ones these counts make. See "State, Ownership, and Activation" in `references.md` for the related Working Set discussion.
 - **Home box** — The stage someone gravitates toward, where they spend disproportionate time.
 - **Neglected character** — The Repertoire Role someone most often avoids meeting.
 - **The Fractal Property** — Every stage is itself a full cycle; the framework applies recursively at any granularity, cues included. (One optional way to picture this — a staircase inside a staircase — is in `analogy-spiral.md`.)
@@ -79,9 +86,9 @@ Not four fixed residents, and not five different performers — one Actor, drawi
 
 ### Movement
 
-Every stage has a source type (Internal or External) and a target type (Internal or External) — see "The Matrix," above. A transition from one stage to the next is only one of sixteen theoretically possible pairings (four stages × four stages); these diagrams show which pairings each Movement concept actually refers to.
+Every stage has a source type (Internal or External) and a target type (Internal or External) — see "The Matrix," above. An Edge only ever carries Internal-to-Internal or External-to-External — a single Edge can never cross Internal↔External, only a stage itself can. That rules out eight of the sixteen theoretically possible stage-to-stage pairings before Momentum or the Cycle even enter the picture; these diagrams show which of the remaining eight each Movement concept refers to.
 
-**Velocity** counts every transition, regardless of type — the full space of possible movement:
+**Velocity** counts every valid transition, regardless of whether it follows the Cycle — the full space of possible movement once Internal/External-crossing pairings are excluded:
 
 ```mermaid
 graph LR
@@ -90,25 +97,19 @@ graph LR
     C["Externalising"]
     D["Interacting"]
 
-    A --> A
-    A --> D
     A --> B
     A --> C
-    B --> A
-    B --> D
     B --> B
     B --> C
-    C --> B
-    C --> C
     C --> A
     C --> D
-    D --> B
-    D --> C
     D --> A
     D --> D
 ```
 
-**Continuity** — green transitions preserve type across the handoff (the completing stage's target matches the next stage's source); red transitions don't, and can't represent a genuine continuation of the same thread:
+Notice Internalising and Externalising never point back to themselves — see "Edges," above: looping directly would require exactly the Internal↔External crossing an Edge can't make. Only Examining and Interacting can Loop.
+
+**Adjacent** — green transitions follow the Cycle's stated order; red transitions are valid Hops (or Loops) that don't:
 
 ```mermaid
 graph LR
@@ -117,42 +118,26 @@ graph LR
     C["Externalising"]
     D["Interacting"]
 
-    A --> A
-    A --> D
     A --> B
     A --> C
-    B --> A
-    B --> D
     B --> B
     B --> C
-    C --> B
-    C --> C
     C --> A
     C --> D
-    D --> B
-    D --> C
     D --> A
     D --> D
 
-    linkStyle 0 stroke:#e63946,stroke-width:2px
+    linkStyle 0 stroke:#2a9d8f,stroke-width:2px
     linkStyle 1 stroke:#e63946,stroke-width:2px
-    linkStyle 2 stroke:#2a9d8f,stroke-width:2px
+    linkStyle 2 stroke:#e63946,stroke-width:2px
     linkStyle 3 stroke:#2a9d8f,stroke-width:2px
     linkStyle 4 stroke:#e63946,stroke-width:2px
-    linkStyle 5 stroke:#e63946,stroke-width:2px
+    linkStyle 5 stroke:#2a9d8f,stroke-width:2px
     linkStyle 6 stroke:#2a9d8f,stroke-width:2px
-    linkStyle 7 stroke:#2a9d8f,stroke-width:2px
-    linkStyle 8 stroke:#e63946,stroke-width:2px
-    linkStyle 9 stroke:#e63946,stroke-width:2px
-    linkStyle 10 stroke:#2a9d8f,stroke-width:2px
-    linkStyle 11 stroke:#2a9d8f,stroke-width:2px
-    linkStyle 12 stroke:#e63946,stroke-width:2px
-    linkStyle 13 stroke:#e63946,stroke-width:2px
-    linkStyle 14 stroke:#2a9d8f,stroke-width:2px
-    linkStyle 15 stroke:#2a9d8f,stroke-width:2px
+    linkStyle 7 stroke:#e63946,stroke-width:2px
 ```
 
-**Momentum** — only the Continuity-preserving transitions that also advance to a different stage: the one fixed cycle, Directed, in its actual order:
+**Momentum** — only the Adjacent Hops: the one fixed cycle, in its actual order:
 
 ```mermaid
 graph LR
@@ -160,16 +145,6 @@ graph LR
     B --> C["Externalising"]
     C --> D["Interacting"]
     D --> A
-```
-
-**Stagnation** — the four transitions that return to the same stage, shown disconnected from each other since none of them advances the cycle:
-
-```mermaid
-graph LR
-    A["Internalising"] --> A
-    B["Examining"] --> B
-    C["Externalising"] --> C
-    D["Interacting"] --> D
 ```
 
 **The Fractal Property** — every stage is itself a full copy of the same cycle:
