@@ -8,12 +8,14 @@ Built from a small set of primitives — Actor, Role, Node, Edge — that combin
 
 | File | Purpose |
 | --- | --- |
-| [`bin/profile/primitives.md`](./bin/profile/primitives.md) | The fundamentals — Actor, Role, Node, Edge, Behavior Graph. Everything else is built on this. |
-| [`about.md`](./about.md) | The narrative explanation — why the framework works |
+| [`bin/profile/primitives.md`](./bin/profile/primitives.md) | The fundamentals, formally — Actor, Role, Node, Edge, Behavior Graph. Everything else is built on this. |
+| [`fundamentals.md`](./fundamentals.md) | The same fundamentals, in plain English — why the framework works |
 | [`reference.md`](./reference.md) | Strict definitions and lookup tables |
 | [`references.md`](./references.md) | External sources the framework draws on |
 | [`origin.md`](./origin.md) | The framework's history |
 | [`SKILL.md`](./SKILL.md) | The operational layer — how to actually run Uriam in a live conversation |
+| [`analogy-spiral.md`](./analogy-spiral.md) | Optional: the cycle pictured as a climbing staircase |
+| [`analogy-production.md`](./analogy-production.md) | Optional: the Repertoire, the Conductor, and the musical-theatre picture |
 
 ## Test harness
 
@@ -38,7 +40,7 @@ Claude will identify which stage of the graph you're in, which Role you're about
 
 ## Learn more
 
-The full framework — the primitives, the matrix, the cast, the Stage Manager, and how it maps onto AI system design — is in [`about.md`](./about.md).
+The full framework — the primitives, the matrix, Momentum, and how it maps onto AI system design — is in [`fundamentals.md`](./fundamentals.md). The Repertoire and the Conductor are pictured in [`analogy-production.md`](./analogy-production.md).
 
 ## License
 
