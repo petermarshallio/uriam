@@ -10,7 +10,7 @@ its section files -- no shared file that every model run has to coordinate
 writes to.
 
 No selection flags + a real terminal -> interactive menu (pick a model,
-run it, repeat; 'a' for all, 'm' for metastudy-only, 'x' to quit).
+run it, repeat; 'a' for all, 'm' for metastudy-only, 'q' to quit).
 
 Usage:
     python run.py                       # interactive menu
@@ -29,6 +29,7 @@ import logging
 import re
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -44,6 +45,11 @@ from lib.metastudy import build_metastudy
 from lib.ollama_service import OllamaService
 from lib.pricing import estimate_cost, format_usd
 from lib.providers import get_provider
+
+# How many characters of the live-streamed response tail to show in the
+# progress line -- a live preview of what the model is actually writing,
+# not just a spinner.
+LIVE_PREVIEW_CHARS = 50
 
 PROFILE_DIR = Path(__file__).parent
 PRIMITIVES_PATH = PROFILE_DIR / "primitives.md"
@@ -124,17 +130,18 @@ def run_model(
     system: str,
     sections: list[tuple[str, list[str]]],
     model_dir: Path,
-) -> tuple[list[str], int, int]:
+) -> tuple[list[str], int, int, float]:
     """Runs one turn per section (that section's questions batched together),
     writing each section's transcript to its own file as soon as it
     completes -- so a later section failing doesn't lose earlier progress.
 
-    Returns (written file names, total_input_tokens, total_output_tokens).
+    Returns (written file names, total_input_tokens, total_output_tokens, total_elapsed_seconds).
     """
     client = get_provider(provider, model)
     messages: list[dict] = []
     total_input_tokens = 0
     total_output_tokens = 0
+    total_elapsed = 0.0
     written: list[str] = []
 
     with Progress(
@@ -152,13 +159,37 @@ def run_model(
 
             prompt = "\n".join(f"{i}. {q}" for i, q in enumerate(questions, start=1))
             messages.append({"role": "user", "content": prompt})
-            reply = client.send(messages, system=system)
+
+            def on_progress(text_so_far: str) -> None:
+                tail = text_so_far.replace("\n", " ").strip()[-LIVE_PREVIEW_CHARS:]
+                progress.update(task, current=f"[{index}/{len(sections)}] {section} -- ...{tail}")
+
+            turn_start = time.monotonic()
+            reply = client.send(messages, system=system, on_progress=on_progress)
+            elapsed = time.monotonic() - turn_start
+
+            if reply.truncated:
+                # Stop here, before this reply is saved or fed forward as
+                # context: a truncated file would misrepresent the model's
+                # actual answer, and appending a cut-off assistant turn would
+                # corrupt every later section's conversation history with it.
+                raise RuntimeError(
+                    f"section {index}/{len(sections)} [{section}] hit the output token cap "
+                    f"({reply.output_tokens} tokens generated) -- refusing to save a truncated "
+                    f"reply or build later turns on top of incomplete context"
+                )
+
             messages.append({"role": "assistant", "content": reply.text})
 
             total_input_tokens += reply.input_tokens
             total_output_tokens += reply.output_tokens
-            if reply.truncated:
-                log.warning(f"{label} section {index}/{len(sections)} [{section}] hit max_tokens -- reply may be cut off")
+            total_elapsed += elapsed
+
+            tok_per_sec = reply.output_tokens / elapsed if elapsed > 0 else 0
+            log.info(
+                f"[dim]{label}[/] {index}/{len(sections)} [{section}] -- "
+                f"{reply.output_tokens} tokens in {elapsed:.1f}s ({tok_per_sec:.1f} tok/s)"
+            )
 
             file_content = "\n".join([
                 f"# {label} ({provider} / {model}) — {section}",
@@ -182,7 +213,7 @@ def run_model(
             written.append(filename)
             progress.advance(task)
 
-    return written, total_input_tokens, total_output_tokens
+    return written, total_input_tokens, total_output_tokens, total_elapsed
 
 
 def run_one(
@@ -218,18 +249,24 @@ def run_one(
         if provider == "ollama":
             ollama_service.ensure_running()
 
-        written, input_tokens, output_tokens = run_model(label, provider, model, system_prompt, sections, model_dir)
+        written, input_tokens, output_tokens, elapsed = run_model(label, provider, model, system_prompt, sections, model_dir)
         cost = estimate_cost(input_tokens, output_tokens, spec.get("price_in"), spec.get("price_out"))
         cost_line = format_usd(cost, free=(provider == "ollama"))
+        avg_tok_per_sec = output_tokens / elapsed if elapsed > 0 else 0
 
         manifest.update({
             "status": "ok",
             "input_tokens": input_tokens,
             "output_tokens": output_tokens,
             "cost_usd": cost,
+            "elapsed_seconds": elapsed,
+            "avg_tokens_per_second": avg_tok_per_sec,
             "files": written,
         })
-        log.info(f"[green]{label}[/] done -> {len(written)} section files ({cost_line})")
+        log.info(
+            f"[green]{label}[/] done -> {len(written)} section files "
+            f"({avg_tok_per_sec:.1f} tok/s avg, {cost_line})"
+        )
     except Exception as exc:  # noqa: BLE001 -- one model's failure shouldn't kill the session
         (model_dir / "ERROR.md").write_text(f"# {label} ({provider} / {model})\n\nFAILED: {exc}\n")
         manifest.update({"status": "error", "error": str(exc)})
@@ -264,6 +301,31 @@ def build_menu_table(model_specs: list[dict]) -> Table:
     return table
 
 
+def build_sections_table(sections: list[tuple[str, list[str]]]) -> Table:
+    table = Table(title="Question Sets")
+    table.add_column("#", justify="right", style="bold")
+    table.add_column("Section")
+    table.add_column("Questions", justify="right")
+    for i, (name, questions) in enumerate(sections, start=1):
+        table.add_row(str(i), name, str(len(questions)))
+    return table
+
+
+def pick_sections(sections: list[tuple[str, list[str]]]) -> list[tuple[str, list[str]]] | None:
+    """Prompts once for which section(s) this whole session should run.
+    Returns None if the user quit here."""
+    console.print(build_sections_table(sections))
+    console.print("[bold]a[/] run ALL sections   [bold]q[/] quit")
+    choices = [str(i) for i in range(1, len(sections) + 1)] + ["a", "q"]
+    choice = Prompt.ask("Pick a section number, a, or q", choices=choices, show_choices=False)
+
+    if choice == "q":
+        return None
+    if choice == "a":
+        return sections
+    return [sections[int(choice) - 1]]
+
+
 def interactive_menu(
     config: dict,
     run_dir: Path,
@@ -274,23 +336,27 @@ def interactive_menu(
     synthesis_price: tuple[float | None, float | None],
     ollama_service: OllamaService,
 ) -> None:
+    selected_sections = pick_sections(sections)
+    if selected_sections is None:
+        return
+
     model_specs = sorted(config["models"], key=lambda m: m.get("released", ""), reverse=True)
-    choices = [str(i) for i in range(1, len(model_specs) + 1)] + ["a", "m", "x"]
+    choices = [str(i) for i in range(1, len(model_specs) + 1)] + ["a", "m", "q"]
     while True:
         console.print(build_menu_table(model_specs))
-        console.print("[bold]a[/] run ALL   [bold]m[/] metastudy only   [bold]x[/] quit")
-        choice = Prompt.ask("Pick a model number, a, m, or x", choices=choices, show_choices=False)
+        console.print("[bold]a[/] run ALL   [bold]m[/] metastudy only   [bold]q[/] quit")
+        choice = Prompt.ask("Pick a model number, a, m, or q", choices=choices, show_choices=False)
 
-        if choice == "x":
+        if choice == "q":
             return
         if choice == "m":
             run_metastudy_step(run_dir, synthesis_model, synthesis_price)
             continue
         if choice == "a":
             for spec in model_specs:
-                run_one(spec, run_dir, system_prompt, sections, shas, ollama_service)
+                run_one(spec, run_dir, system_prompt, selected_sections, shas, ollama_service)
             continue
-        run_one(model_specs[int(choice) - 1], run_dir, system_prompt, sections, shas, ollama_service)
+        run_one(model_specs[int(choice) - 1], run_dir, system_prompt, selected_sections, shas, ollama_service)
 
 
 def main() -> None:
