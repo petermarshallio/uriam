@@ -1,0 +1,23 @@
+{
+  "date": "20260719",
+  "provider": "anthropic",
+  "model": "claude-sonnet-4-5",
+  "label": "sonnet-4-5",
+  "primitives_sha": "4e202453a1773775bf290cf68c5b92b0d84d0e49",
+  "instructions_sha": null,
+  "status": "ok",
+  "input_tokens": 60937,
+  "output_tokens": 21281,
+  "cost_usd": 0.5020260000000001,
+  "files": [
+    "01-nodes.md",
+    "02-edges.md",
+    "03-behavior-graph.md",
+    "04-terms.md",
+    "05-graph-metrics.md",
+    "06-graph-collaborations.md",
+    "07-self-reflection.md",
+    "08-ai-self-model.md"
+  ],
+  "updated_at": "2026-07-19T12:38:34.487195+00:00"
+}
